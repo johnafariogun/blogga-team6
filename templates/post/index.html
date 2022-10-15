@@ -223,9 +223,11 @@
           </nav>
 
           <i class="fa-solid fa-magnifying-glass mobile_search"></i>
-          <!-- onclick="showLoginModal()" -->
+
           <div class="nav_btns">
-            <a href="{% url 'login' %}" class="button"> Sign In</a>
+            <button class="button">
+              <a href="{% url 'login' %}">Sign In</a>
+            </button>
             <button
               class="subscribe button"
               onclick="window.location.href='#subscribe';"
