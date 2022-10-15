@@ -28,6 +28,16 @@ function showLoginModal() {
   loginModal.style.display = "block";
 }
 
+//  Password Reset Modal
+// function hideResetModal() {
+//   let resetModal = document.querySelector(".reset-password-modal");
+//   resetModal.style.display = "none";
+// }
+// function showResetModal() {
+//   let resetModal = document.querySelector(".reset-password-modal");
+//   resetModal.style.display = "block";
+// }
+
 // MOBILE MENU
 const menu = document.querySelector(".mobile_menu");
 const openMenu = document.querySelector(".hamburger");

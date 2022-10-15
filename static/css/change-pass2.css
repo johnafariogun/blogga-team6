@@ -9,6 +9,20 @@ body {
   background-color: #fdfdfd;
 }
 
+.reset-password-modal {
+  /* display: grid; */
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  background-color: rgba(248, 248, 248, 0.7);
+  backdrop-filter: blur(5px);
+  display: none;
+  place-items: center;
+}
+
 header {
   text-align: center;
   padding-top: 1rem;
@@ -23,7 +37,6 @@ header {
   width: 24px;
   height: 24px;
 }
-
 
 .shape1 {
   height: 9rem;
@@ -159,7 +172,6 @@ a {
 /* specific styling for 350px for icons only */
 
 @media screen and (max-width: 350px) {
-
   .mobile-img {
     height: 405px;
   }
@@ -172,7 +184,6 @@ a {
 /* specific styling for 401- 475px for eye-icon only */
 
 @media (min-width: 401px) and (max-width: 475px) {
-
   form input {
     width: 240px;
   }
@@ -239,8 +250,6 @@ a {
   .form-content {
     padding: 0px;
   }
-
-
 }
 
 /* styling from 401-500px*/
@@ -304,7 +313,6 @@ a {
   .form-content {
     padding: 0px;
   }
-
 }
 
 /* styling from 501-550px*/
@@ -367,8 +375,6 @@ a {
   .form-content {
     padding: 0px;
   }
-
-
 }
 
 /* styling from 551-665px*/
@@ -432,9 +438,6 @@ a {
   .form-content {
     padding: 0px;
   }
-
-
-
 }
 
 /* styling from 666-768px*/
@@ -498,8 +501,6 @@ a {
   .form-content {
     padding: 0px;
   }
-
-
 }
 
 /* Responsiveness for small desktop view */
@@ -531,9 +532,7 @@ a {
 
   input {
     width: 290px;
-
   }
-
 }
 
 /* styling from 834-900px*/
