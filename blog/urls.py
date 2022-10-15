@@ -24,7 +24,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('posts/', include('post.urls')),
 
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+]+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+if settings.DEBUG == False:
+    handler404 = "accounts.views.error_404_view"
+    handler500 = "accounts.views.error_500_view"
