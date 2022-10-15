@@ -25,6 +25,6 @@ urlpatterns = [
     path('posts/', include('post.urls')),
 
 ]+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
-if settings.DEBUG == FALSE:
+if settings.DEBUG == False:
     handler404 = "accounts.views.error_404_view"
     handler500 = "accounts.views.error_500_view"
