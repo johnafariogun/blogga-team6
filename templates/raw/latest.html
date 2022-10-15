@@ -5,18 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blogga | Latest</title>
-    <link rel="stylesheet" href="css/category-page.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/category-page.css'%}" />
+    <link rel="stylesheet" href="{% static './css/style.css'%}" />
+    <link rel="stylesheet" href="{% static './css/login.css'%}" />
     <!-- FAVICONS -->
     <link
       rel="shortcut icon"
-      href="./img/logo_resources/Favicon_White.png"
+      href="{% static './img/logo_resources/Favicon_White.png'%}"
       type="image/x-icon"
       id="fav-white"
     />
     <link
       rel="shortcut icon"
-      href="./img/logo_resources/Favicon.png"
+      href="{% static './img/logo_resources/Favicon.png'%}"
       type="image/x-icon"
       id="fav-green"
     />
@@ -35,9 +36,118 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
   </head>
   <body>
+    <!-- LOGIN MODAL START-->
+    <!--  -->
+    <div class="login-modal">
+      <section class="login-body">
+        <img
+          src="{% static './img/Login/mobile_blob1.png'%}"
+          alt="mobile blob design"
+          class="mobile_blob1"
+        />
+        <img
+          src="{% static './img/Login/mobile_blob2.png'%}"
+          alt="mobile blob design"
+          class="mobile_blob2"
+        />
+        <img
+          src="{% static './img/Login/mobile_blob3.png'%}"
+          alt="mobile blob design"
+          class="mobile_blob3"
+        />
+
+        <main class="login-main">
+          <div class="left-div">
+            <img
+              src="{% static './img/Login/login_top_blob.png'%}"
+              alt="blob design "
+              class="top_blob"
+            />
+            <img
+              src="{% static './img/Login/login_main_image.png'%}"
+              alt="welcome image"
+            />
+            <img
+              src="{% static './img/Login/login_bottom_blob.png'%}"
+              alt="blob design "
+              class="btm_blob"
+            />
+          </div>
+
+          <div class="right-div">
+            <i
+              class="fa-solid fa-xmark login-modal-close"
+              onclick="hideLoginModal()"
+            ></i>
+            <div class="right-div-container">
+              <h3 class="head-txt">Welcome Back : )</h3>
+
+              <input
+                type="text"
+                placeholder="Username"
+                id="login-username"
+                required
+              />
+
+              <br />
+
+              <div class="password-eye">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="login-password"
+                  required
+                />
+                <i class="bi bi-eye" onclick="passwordToggle()"></i>
+                <i class="bi bi-eye-slash" onclick="passwordToggle()"></i>
+              </div>
+
+              <a href="./forgotpassword.html" class="forgot-password"
+                >Forgot Password?</a
+              >
+              <!-- <br /> -->
+
+              <label for="remember-me" class="remem-label">
+                <input
+                  type="checkbox"
+                  name="remember-me"
+                  id="remember-me"
+                />&nbsp; <small>Remember Me</small></label
+              >
+              <br />
+
+              <button type="button" class="login-button">Log In</button>
+
+              <div class="or-separator">
+                <hr />
+                <p>OR</p>
+                <hr />
+              </div>
+
+              <button type="button" class="continue-button">
+                <img
+                  src="{% static './img/google.png'%}"
+                  alt=""
+                  class="google"
+                />
+                &nbsp; Continue With Google
+              </button>
+
+              <p class="base-txt">
+                Become a Blogga?
+                <a href="./write-for-us.html" class="signup-link">
+                  Write For Us</a
+                >
+              </p>
+            </div>
+          </div>
+        </main>
+      </section>
+    </div>
+    <!--  -->
+    <!-- LOGIN MODAL END-->
     <!-- HEADER & MOBILE MENU  START-->
     <!--  -->
     <header>
@@ -68,7 +178,7 @@
 
       <div class="nav_outer">
         <!-- <a href="./index.html"
-          ><img src="./img/logo_resources/Favicon.png" alt="Blogga Logo Icon"
+          ><img src="{% static './img/logo_resources/Favicon.png'%}" alt="Blogga Logo Icon"
         /></a> -->
 
         <div class="nav_inner">
@@ -140,20 +250,22 @@
               </div>
 
               <img
-                src="./img/home_page/author_hamzy.png"
+                src="{% static './img/home_page/author_hamzy.png'%}"
                 alt="profile picture"
               />
             </div>
           </div>
 
           <a href="./index.html"
-            ><img src="./img/logo_resources/Favicon.png" alt="Blogga Logo Icon"
+            ><img
+              src="{% static './img/logo_resources/Favicon.png'%}"
+              alt="Blogga Logo Icon"
           /></a>
 
           <nav>
             <a href="./index.html"
               ><img
-                src="./img/logo_resources/Favicon_White.png"
+                src="{% static './img/logo_resources/Favicon_White.png'%}"
                 alt="Blogga Logo"
             /></a>
             <ul>
@@ -178,7 +290,7 @@
                   MORE
                   <span class="dropdown_arrow"
                     ><img
-                      src="./img/home_page/dropdown_arrow.png"
+                      src="{% static './img/home_page/dropdown_arrow.png'%}"
                       alt="dropdown"
                   /></span>
                 </label>
@@ -206,7 +318,10 @@
               Subscribe
             </button>
 
-            <img src="./img/home_page/author_hamzy.png" alt="profile picture" />
+            <img
+              src="{% static './img/home_page/author_hamzy.png'%}"
+              alt="profile picture"
+            />
           </div>
         </div>
       </div>
@@ -214,258 +329,324 @@
     <!--  -->
     <!-- HEADER & MOBILE MENU END-->
     <main>
-
-
-     <section class="category-brief" id="category-brief2">
-        <h2 id="latest"> LATEST </h2>
+      <section class="category-brief" id="category-brief2">
+        <h2 id="latest">LATEST</h2>
         <p id="latest-paragraph">SEE ALL</p>
-        <hr class="latest-hr">
-    </section>
+        <hr class="latest-hr" />
+      </section>
 
       <section class="main-content">
-         <!-- LEFT SECTION STARTS CONTENT 1-->
-         <div>
-         <div class="left-section">
-          <div class="left-image">
-            <a href=""><img src="img/lord-of-rings-img.svg" alt="lord-of-rings-img"></a>
-          </div>
-          <div class="left-content">
-            <a href="">The Lord of the Rings: The Rings of Power recap:
-                 Not <br> all who wander are lost</a>
-                <p>Welcome back to Middle-earth, where people love to burst out into song
-                 — especially when they're traversing wild nature.</p>
-                 <div class="read-more-section">
-                    <a href="" id="right-arrow"
-                      >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
-                    ></a>
-                  </div>
-                  <div class="post-section" >
-                    <p>Hamzah</p>
-                     <p>30 Minutes ago
-                   </div>
-          </div>
-            <hr class="hr-line"/>
-         </div>
-
-         <!-- LEFT SECTION STARTS CONTENT 2-->
-
-         <div class="left-section">
+        <!-- LEFT SECTION STARTS CONTENT 1-->
+        <div>
+          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/The-styling.svg" alt="lord-of-rings-img"></a>
+              <a href=""
+                ><img
+                  src="{% static './img/lord-of-rings-img.svg'%}"
+                  alt="lord-of-rings-img"
+              /></a>
+            </div>
+            <div class="left-content">
+              <a href=""
+                >The Lord of the Rings: The Rings of Power recap: Not <br />
+                all who wander are lost</a
+              >
+              <p>
+                Welcome back to Middle-earth, where people love to burst out
+                into song — especially when they're traversing wild nature.
+              </p>
+              <div class="read-more-section">
+                <a href="" id="right-arrow"
+                  >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+              <div class="post-section">
+                <p>Hamzah</p>
+                <p>30 Minutes ago</p>
+              </div>
+            </div>
+            <hr class="hr-line" />
+          </div>
+
+          <!-- LEFT SECTION STARTS CONTENT 2-->
+
+          <div class="left-section">
+            <div class="left-image">
+              <a href=""
+                ><img
+                  src="{% static './img/The-styling.svg'%}"
+                  alt="lord-of-rings-img"
+              /></a>
             </div>
             <div class="left-content">
               <a href="">The styling and pictures from Tems' GQ Hype cover</a>
-                  <p>As a beautiful woman, Tems always
-                    looks like one but the styling of this GQ magazine was not it for us. </p>
-                   <div class="read-more-section">
-                      <a href="" id="right-arrow"
-                        >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
-                      ></a>
-                    </div>
-                    <div class="post-section" >
-                        <p>Nifemi</p>
-                         <p>30 Minutes ago
-                       </div>
+              <p>
+                As a beautiful woman, Tems always looks like one but the styling
+                of this GQ magazine was not it for us.
+              </p>
+              <div class="read-more-section">
+                <a href="" id="right-arrow"
+                  >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+              <div class="post-section">
+                <p>Nifemi</p>
+                <p>30 Minutes ago</p>
+              </div>
             </div>
-              <hr class="hr-line"/>
-           </div>
+            <hr class="hr-line" />
+          </div>
 
-        <!-- LEFT SECTION STARTS CONTENT 3-->
+          <!-- LEFT SECTION STARTS CONTENT 3-->
 
-         <div class="left-section">
+          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/Tech2.svg" alt="lord-of-rings-img"></a>
+              <a href=""
+                ><img
+                  src="{% static './img/Tech2.svg'%}"
+                  alt="lord-of-rings-img"
+              /></a>
             </div>
             <div class="left-content">
-              <a href="">Tesla’s Humanoid Robot Optimus Might Debut On September 30</a>
-                  <p>In early summer, we learned from Elon Musk’s tweet
-                    that the second Tesla AI Day event was postponed… </p>
-                   <div class="read-more-section">
-                      <a href="" id="right-arrow"
-                        >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
-                      ></a>
-                    </div>
-                    <div class="post-section" >
-                        <p>Adedotun</p>
-                         <p>30 Minutes ago
-                       </div>
+              <a href=""
+                >Tesla’s Humanoid Robot Optimus Might Debut On September 30</a
+              >
+              <p>
+                In early summer, we learned from Elon Musk’s tweet that the
+                second Tesla AI Day event was postponed…
+              </p>
+              <div class="read-more-section">
+                <a href="" id="right-arrow"
+                  >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+              <div class="post-section">
+                <p>Adedotun</p>
+                <p>30 Minutes ago</p>
+              </div>
             </div>
-              <hr class="hr-line"/>
-           </div>
+            <hr class="hr-line" />
+          </div>
 
-           <!-- LEFT SECTION STARTS CONTENT 4-->
+          <!-- LEFT SECTION STARTS CONTENT 4-->
 
-         <div class="left-section">
+          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/Paid-price.svg" alt="lord-of-rings-img"></a>
+              <a href=""
+                ><img
+                  src="{% static './img/Paid-price.svg'%}"
+                  alt="lord-of-rings-img"
+              /></a>
             </div>
             <div class="left-content">
-              <a href="">I paid the price to become one of the best, says E4luxury</a>
-                  <p>Ayodele Donye Samson, founder of E4luxury Jewellers,
-                    has revealed the cost of being touted as the best among his peers. </p>
-                   <div class="read-more-section">
-                      <a href="" id="right-arrow"
-                        >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
-                      ></a>
-                    </div>
-                    <div class="post-section" >
-                        <p>Racheal</p>
-                         <p>30 Minutes ago
-                       </div>
+              <a href=""
+                >I paid the price to become one of the best, says E4luxury</a
+              >
+              <p>
+                Ayodele Donye Samson, founder of E4luxury Jewellers, has
+                revealed the cost of being touted as the best among his peers.
+              </p>
+              <div class="read-more-section">
+                <a href="" id="right-arrow"
+                  >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+              <div class="post-section">
+                <p>Racheal</p>
+                <p>30 Minutes ago</p>
+              </div>
             </div>
-              <hr class="hr-line"/>
-           </div>
+            <hr class="hr-line" />
+          </div>
 
-            <!-- LEFT SECTION STARTS CONTENT 5-->
+          <!-- LEFT SECTION STARTS CONTENT 5-->
 
-         <div class="left-section">
+          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/Tech6.svg" alt="lord-of-rings-img"></a>
+              <a href=""
+                ><img
+                  src="{% static './img/Tech6.svg'%}"
+                  alt="lord-of-rings-img"
+              /></a>
             </div>
             <div class="left-content">
-              <a href="">Vivo X Fold+ Will Have a Red Variant Called ‘Huaxia Red’</a>
-                  <p>The Vivo X Fold+ is certain to launch at the end
-                     of this month. As always, the launch…</p>
-                   <div class="read-more-section">
-                      <a href="" id="right-arrow"
-                        >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
-                      ></a>
-                    </div>
-                    <div class="post-section" >
-                        <p>Amara</p>
-                         <p>30 Minutes ago
-                       </div>
+              <a href=""
+                >Vivo X Fold+ Will Have a Red Variant Called ‘Huaxia Red’</a
+              >
+              <p>
+                The Vivo X Fold+ is certain to launch at the end of this month.
+                As always, the launch…
+              </p>
+              <div class="read-more-section">
+                <a href="" id="right-arrow"
+                  >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+              <div class="post-section">
+                <p>Amara</p>
+                <p>30 Minutes ago</p>
+              </div>
             </div>
-              <hr class="hr-line"/>
-           </div>
+            <hr class="hr-line" />
+          </div>
 
-            <!-- LEFT SECTION STARTS CONTENT 6-->
+          <!-- LEFT SECTION STARTS CONTENT 6-->
 
-         <div class="left-section">
+          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/Ayinla-review.svg" alt="lord-of-rings-img"></a>
+              <a href=""
+                ><img
+                  src="{% static './img/Ayinla-review.svg'%}"
+                  alt="lord-of-rings-img"
+              /></a>
             </div>
             <div class="left-content">
-              <a href="">'Ayinla' Review: Tunde Kelani's Movie Worth The Hype Thanks To Adedimeji Lateef's Singular Performance </a>
-                  <p>Ayinla is a film that tells the story of Nigerian musician, Ayinla Omowura, who used Apala music to address issues of the contemporary society
-                    - commending and criticizing various governmental and individual acts. </p>
-                   <div class="read-more-section">
-                      <a href="" id="right-arrow"
-                        >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
-                      ></a>
-                    </div>
-                    <div class="post-section" >
-                        <p>David</p>
-                         <p>30 Minutes ago
-                       </div>
+              <a href=""
+                >'Ayinla' Review: Tunde Kelani's Movie Worth The Hype Thanks To
+                Adedimeji Lateef's Singular Performance
+              </a>
+              <p>
+                Ayinla is a film that tells the story of Nigerian musician,
+                Ayinla Omowura, who used Apala music to address issues of the
+                contemporary society - commending and criticizing various
+                governmental and individual acts.
+              </p>
+              <div class="read-more-section">
+                <a href="" id="right-arrow"
+                  >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+              <div class="post-section">
+                <p>David</p>
+                <p>30 Minutes ago</p>
+              </div>
             </div>
-              <hr class="hr-line"/>
-           </div>
+            <hr class="hr-line" />
+          </div>
 
-           <!-- LEFT SECTION STARTS CONTENT 7-->
+          <!-- LEFT SECTION STARTS CONTENT 7-->
 
-         <div class="left-section">
+          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/King-of-thieves.svg" alt="lord-of-rings-img"></a>
+              <a href=""
+                ><img
+                  src="{% static './img/King-of-thieves.svg'%}"
+                  alt="lord-of-rings-img"
+              /></a>
             </div>
             <div class="left-content">
-              <a href="">Review: ‘King of thieves’ Wants you to remember the Magic and allure of indegenous movies`</a>
-                  <p>Ultimately, King of Thieves is a great Yoruba epic thriller with enough drama, twists,
-                    and nostalgia to make you remember the magic and allure  </p>
-                   <div class="read-more-section">
-                      <a href="" id="right-arrow"
-                        >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
-                      ></a>
-                    </div>
-                    <div class="post-section" >
-                        <p>Taofikat</p>
-                         <p>30 Minutes ago
-                       </div>
+              <a href=""
+                >Review: ‘King of thieves’ Wants you to remember the Magic and
+                allure of indegenous movies`</a
+              >
+              <p>
+                Ultimately, King of Thieves is a great Yoruba epic thriller with
+                enough drama, twists, and nostalgia to make you remember the
+                magic and allure
+              </p>
+              <div class="read-more-section">
+                <a href="" id="right-arrow"
+                  >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+              <div class="post-section">
+                <p>Taofikat</p>
+                <p>30 Minutes ago</p>
+              </div>
             </div>
-              <hr class="hr-line"/>
-           </div>
+            <hr class="hr-line" />
+          </div>
 
-           <!-- LEFT SECTION STARTS CONTENT 8-->
+          <!-- LEFT SECTION STARTS CONTENT 8-->
 
-         <div class="left-section">
+          <div class="left-section">
             <div class="left-image">
-              <a href=""><img src="img/Melian.svg" alt="lord-of-rings-img"></a>
+              <a href=""
+                ><img
+                  src="{% static './img/Melian.svg'%}"
+                  alt="lord-of-rings-img"
+              /></a>
             </div>
             <div class="left-content">
-            <a href="">Milan Fashion Week: The Italian stalwart takes a stab at rebellion</a>
-                  <p>Of "the big four" fashion weeks, Milan has long boasted heritage but often pales in comparison to the youthful spirit of London, the high-octane energy of New York or the grandeur of Paris.</p>
-                   <div class="read-more-section">
-                      <a href="" id="right-arrow"
-                        >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
-                      ></a>
-                    </div>
-                    <div class="post-section" >
-                        <p>Neeno</p>
-                         <p>30 Minutes ago
-                       </div>
+              <a href=""
+                >Milan Fashion Week: The Italian stalwart takes a stab at
+                rebellion</a
+              >
+              <p>
+                Of "the big four" fashion weeks, Milan has long boasted heritage
+                but often pales in comparison to the youthful spirit of London,
+                the high-octane energy of New York or the grandeur of Paris.
+              </p>
+              <div class="read-more-section">
+                <a href="" id="right-arrow"
+                  >READ MORE <i class="fa-sharp fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+              <div class="post-section">
+                <p>Neeno</p>
+                <p>30 Minutes ago</p>
+              </div>
             </div>
-           </div>
-
-
-         </div>
+          </div>
+        </div>
 
         <!-- LEFT SECTION ENDS -->
 
+        <!-- RIGHT SECTION STARTS -->
+        <div>
+          <!--This is the Div that carries the right section content-->
+        </div>
+      </section>
 
-          <!-- RIGHT SECTION STARTS -->
-          <div>
+      <section class="page-num">
+        <hr class="category-hr" />
+        <div class="page-num-content">
+          <a href="#" class="page-btn start-page"
+            ><img src="{% static './img/less-than.svg'%}" alt=""
+          /></a>
+          <a href="#" class="page-btn active2">1</a>
+          <a href="#" class="page-btn prev-page">...</a>
+          <a href="#" class="page-btn">6</a>
+          <a href="" class="page-btn">7</a>
+          <a href="" class="page-btn">8</a>
+          <a href="" class="page-btn">9</a>
+          <a href="" class="page-btn">10</a>
+          <a href="" class="page-btn" id="hide">11</a>
+          <a href="" class="page-btn" id="hide">12</a>
+          <a href="" class="page-btn" id="hide">13</a>
+          <a href="" class="page-btn" id="hide">14</a>
+          <a href="" class="page-btn next-page" id="hide">...</a>
+          <a href="" class="page-btn" id="hide">458</a>
+          <a href="" class="page-btn end-page"
+            ><img src="{% static './img/Greater-than.svg'%}" alt=""
+          /></a>
+          &nbsp; &nbsp;
+        </div>
+      </section>
 
+      <section>
+        <hr />
+      </section>
 
+      <section class="newsletter" id="subscribe">
+        <h2>STAY UPDATED</h2>
 
+        <p>
+          Get the latest creative news from Blogga about Art , Fashion,
+          Entertainment and lots more.
+        </p>
 
-<!--This is the Div that carries the right section content-->
-         </div>
-        </section>
-
-        <section class="page-num">
-             <hr class="category-hr"/>
-             <div class="page-num-content">
-                <a href="#" class="page-btn start-page"><img src="img/less-than.svg" alt=""></a>
-                <a href="#" class="page-btn active2">1</a>
-                <a href="#" class="page-btn prev-page">...</a>
-                <a href="#" class="page-btn">6</a>
-                <a href="" class="page-btn">7</a>
-                <a href="" class="page-btn">8</a>
-                <a href="" class="page-btn">9</a>
-                <a href="" class="page-btn">10</a>
-                <a href="" class="page-btn" id="hide">11</a>
-                <a href="" class="page-btn" id="hide">12</a>
-                <a href="" class="page-btn" id="hide">13</a>
-                <a href="" class="page-btn" id="hide">14</a>
-                <a href="" class="page-btn next-page" id="hide">...</a>
-                <a href="" class="page-btn" id="hide">458</a>
-                <a href="" class="page-btn end-page"><img src="img/Greater-than.svg" alt=""></a> &nbsp;  &nbsp;
-             </div>
-        </section>
-
-        <section>
-            <hr  />
-        </section>
-
-        <section class="newsletter" id="subscribe">
-          <h2>STAY UPDATED</h2>
-
-          <p>
-            Get the latest creative news from Blogga about Art , Fashion,
-            Entertainment and lots more.
-          </p>
-
-          <form action="#">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Your Email Address"
-            />
-            <button type="submit" class="subscribe button">Subscribe</button>
-          </form>
-        </section>
-        <!--  -->
+        <form action="#">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your Email Address"
+          />
+          <button type="submit" class="subscribe button">Subscribe</button>
+        </form>
+      </section>
+      <!--  -->
       <!-- SUBSCRIBE SECTION END-->
     </main>
 
@@ -473,7 +654,10 @@
     <!--  -->
     <footer class="main_footer">
       <div class="footer_top">
-        <img src="./img/logo_resources/Favicon_White.png" alt="Blogga Icon" />
+        <img
+          src="{% static './img/logo_resources/Favicon_White.png'%}"
+          alt="Blogga Icon"
+        />
         <ul>
           <li><a href="#">ADVERTISE</a></li>
           <li><a href="./write-for-us.html">WRITE FOR US</a></li>
@@ -481,7 +665,7 @@
           <li>
             <a href="./index.html"
               ><img
-                src="./img/logo_resources/Favicon_White.png"
+                src="{% static './img/logo_resources/Favicon_White.png'%}"
                 alt="Blogga Icon"
             /></a>
           </li>
@@ -521,6 +705,6 @@
     <!--  -->
     <!-- FOOTER END-->
     <script src="category.js"></script>
-    <script src="./index.js"></script>
+    <script src="{% static './js/index.js'%}"></script>
   </body>
 </html>
