@@ -18,6 +18,14 @@ from django.contrib.auth.decorators import login_required
 from post.models import Post
 
 # Create your views here.
+def error_404_view(request,exception):
+    return render(request,'post/error.html')
+
+
+def error_500_view(request):
+    data = {}
+    return render(request,'post/error.html', data)
+
 
 @login_required
 def bookmarks_Add(request, id):
