@@ -5,18 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blogga | Change Password</title>
-    <link rel="stylesheet" href="change-pass2.css" />
-    <link rel="stylesheet" href="css/resetpass.css" />
+    <link rel="stylesheet" href="{% static './css/change-pass2.css'%}" />
+    <link rel="stylesheet" href="{% static './css/resetpass.css'%}" />
     <!-- FAVICONS -->
     <link
       rel="shortcut icon"
-      href="./img/logo_resources/Favicon_White.png"
+      href="{% static './img/logo_resources/Favicon_White.png'%}"
       type="image/x-icon"
       id="fav-white"
     />
     <link
       rel="shortcut icon"
-      href="./img/logo_resources/Favicon.png"
+      href="{% static './img/logo_resources/Favicon.png'%}"
       type="image/x-icon"
       id="fav-green"
     />
@@ -50,19 +50,18 @@
     <header>
       <h2>B<span style="color: #22443e">logg</span>a</h2>
     </header>
-
     <section class="content-container">
       <div class="left-section">
         <div>
           <img
-            src="img/change-pass-shape1.svg"
+            src="{% static './img/change-pass-shape1.svg'%}"
             alt="change-pass-shape1"
             class="shape1"
           />
         </div>
         <div>
           <img
-            src="img/change-pass-img.svg"
+            src="{% static './img/change-pass-img.svg'%}"
             alt="change-pass-img"
             class="pass-img"
           />
@@ -71,7 +70,7 @@
       <div class="image-section-mobile">
         <img src="" alt="" />
         <img
-          src="img/Mobile-Change-Password.png"
+          src="{% static './img/Mobile Change Password.png'%}"
           alt="Mobile"
           class="mobile-img"
         />
@@ -80,7 +79,7 @@
         <div class="form-content">
           <div class="form-container">
             <img
-              src="img/close-icon.png"
+              src="{% static './img/close-icon.png'%}"
               alt="close-icon"
               onclick="hideLoginModal()"
             />
@@ -101,11 +100,7 @@
               Minimum of 8 characters <br />
               Include special characters
             </p>
-            <a href=""
-              ><button class="btn-reset" onclick="showResetModal()">
-                Reset Password
-              </button></a
-            >
+            <a href=""><button class="btn-reset">Reset Password</button></a>
             <a href="login.html"
               ><p class="back-to-login">
                 <span><i class="fa-solid fa-arrow-left"></i> </span>Back to Log
@@ -169,7 +164,7 @@
     <!--  -->
     <!-- RESET PASSWORD MODAL END-->
 
-    <script src="./backend/static/js/index.js"></script>
+    <script src="{% static './js/index.js'%}"></script>
     <script>
       // Password Reset Modal
       function hideResetModal() {
