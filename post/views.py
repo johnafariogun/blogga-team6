@@ -17,7 +17,7 @@ def index(request):
         'posts': posts,
         'common_tags': common_tags
     }
-    return render(request, 'post/index_john.html', context)
+    return render(request, 'post/index.html', context)
     # return render(request, 'post/content-page.html', context)
 
 
