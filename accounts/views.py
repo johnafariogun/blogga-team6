@@ -19,12 +19,12 @@ from post.models import Post
 
 # Create your views here.
 def error_404_view(request,exception):
-    return render(request,'404.html')
+    return render(request,'post/error.html')
 
 
 def error_500_view(request):
     data = {}
-    return render(request,'404.html', data)
+    return render(request,'post/error.html', data)
 
 
 @login_required
