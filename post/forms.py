@@ -23,8 +23,8 @@ class PostForm(forms.ModelForm):
         # 'tags': forms.TextInput(
         #     attrs={ 'style':'resize:none;','class': 'meta','form' :'usrform','placeholder':'Enter your tags here'}
         # ),
-        # # category= forms.ModelChoiceField(queryset=Category.objects.all() )
-        # # # status = forms.CharField(widget=forms.Select(choices=Post.choices))
+        # category= forms.ModelChoiceField(queryset=Category.objects.all() )
+        # # status = forms.CharField(widget=forms.Select(choices=Post.choices))
 
         "description": forms.TextInput(
             attrs={'style':'resize:none;','class': 'meta','id':'', 'form' :'usrform','name':'comment','placeholder':'Enter your post description here'}

@@ -60,7 +60,7 @@ class Post(models.Model):
         ('published', 'Published')
     )
     author = models.ForeignKey(User, on_delete = models.CASCADE)
-    title = models.CharField(max_length=500, unique = True)
+    title = models.TextField(max_length=500, unique = True)
     slug = models.SlugField(max_length=200, unique=True, blank = True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
