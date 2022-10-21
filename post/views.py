@@ -17,7 +17,8 @@ def index(request):
         'posts': posts,
         'common_tags': common_tags
     }
-    return render(request, 'post/index_john.html', context)
+    return render(request, 'post/index.html', context)
+    # return render(request, 'post/index_john.html', context)
     # return render(request, 'post/content-page.html', context)
 
 
@@ -140,5 +141,32 @@ def contents(request):
     
     return render(request, 'post/content-page.html', context)
 
+def archive_view(request):
 
+
+    return render(request, 'raw/archive.html')
+
+def team_view(request):
+
+    return render(request, 'raw/ourteam.html')
+
+def privacy_view(request):
+
+    return render(request, 'raw/privavypolicy.html')
+
+def profile_view(request):
+
+    return render(request, 'raw/profilepage.html')
+
+def contact_view(request):
+
+    return render(request, 'raw/contact-us.html')
+
+def terms_view(request):
+
+    return render(request, 'raw/termsofservice.html')
+
+
+def funcname(request):
+    pass
    
