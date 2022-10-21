@@ -22,9 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('summernote/', include('django_summernote.urls')),
-    path('posts/', include('post.urls')),
+    path('', include('post.urls')),
 
-]+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 if settings.DEBUG == False:
     handler404 = "accounts.views.error_404_view"
     handler500 = "accounts.views.error_500_view"
