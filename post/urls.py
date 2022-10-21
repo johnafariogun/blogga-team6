@@ -15,7 +15,7 @@ urlpatterns = [
     path('our-team/', views.team_view, name='our-team'),
     path('privacy-policy/', views.privacy_view, name ='privacy-policy'),
     path('profile/', views.profile_view, name='profile'),
-    path('terms/',views.terms_view, name='terms')
+    path('terms/',views.terms_view, name='terms'),
     path('content/', views.contents),
     
 ]
