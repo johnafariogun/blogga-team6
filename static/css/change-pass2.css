@@ -65,7 +65,7 @@ header {
 }
 
 .right-section {
-  background-image: url(img/change-pass-shape2.svg);
+  background-image: url("../img/change-pass-shape2.svg");
   background-repeat: no-repeat;
   background-position: right top;
   background-size: 18rem;
@@ -155,7 +155,7 @@ input {
 }
 
 .bottom-shape {
-  background-image: url(img/change-pass-shape3.svg);
+  background-image: url("../img/change-pass-shape3.svg");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 30rem;

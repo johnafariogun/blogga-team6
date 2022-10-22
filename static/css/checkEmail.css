@@ -455,7 +455,7 @@ main {
   }
 
   .rightDiv {
-    background-image: url(./img/check-email-images/VectorTop\ right.png);
+    background-image: url("../img/check-email-images/VectorTopright.png");
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 18rem;
@@ -620,7 +620,7 @@ main {
   }
 
   .rightDiv {
-    background-image: url(./img/check-email-images/VectorTop\ right.png);
+    background-image: url("../img/check-email-images/VectorTopright.png");
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 18rem;
@@ -785,7 +785,7 @@ main {
   }
 
   .rightDiv {
-    background-image: url(./img/check-email-images/VectorTop\ right.png);
+    background-image: url("../img/check-email-images/VectorTopright.png");
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 22rem;
@@ -950,7 +950,7 @@ main {
   }
 
   .rightDiv {
-    background-image: url(./img/check-email-images/VectorTop\ right.png);
+    background-image: url("../img/check-email-images/VectorTopright.png");
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 22rem;

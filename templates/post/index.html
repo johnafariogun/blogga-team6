@@ -59,23 +59,6 @@
 
     <!-- LOGIN MODAL START-->
     <!--  -->
-    <div class="login-modal">
-      <section class="login-body">
-        <img
-          src="{% static './img/Login/mobile_blob1.png'%}"
-          alt="mobile blob design"
-          class="mobile_blob1"
-        />
-        <img
-          src="{% static './img/Login/mobile_blob2.png'%}"
-          alt="mobile blob design"
-          class="mobile_blob2"
-        />
-        <img
-          src="{% static './img/Login/mobile_blob3.png'%}"
-          alt="mobile blob design"
-          class="mobile_blob3"
-        />
 
         <main class="login-main">
           <div class="left-div">
@@ -324,7 +307,9 @@
           <i class="fa-solid fa-magnifying-glass mobile_search"></i>
 
           <div class="nav_btns">
-            <button class="button" onclick="showLoginModal()">Sign In</button>
+            <button class="button">
+              <a href="{% url 'login' %}">Sign In</a>
+            </button>
             <button
               class="subscribe button"
               onclick="window.location.href='#subscribe';"
@@ -346,29 +331,42 @@
     <main class="home_main">
       <!-- HERO SECTION START -->
       <!--  -->
+
+      {% for post in posts %}
+
       <section class="hero" id="to_top">
+        {% if forloop.first %}
+
         <div class="hero_left">
           <div class="hero_left_img">
-            <img
-              src="{% static './img/home_page/constance_wu.png'%}"
-              alt="Constance wu"
-              class="img_zoom"
-            />
+            <a href="{% url 'post:post_detail' post.slug %}">
+              <img
+                src="{{ post.image.url }}"
+                alt="Constance wu"
+                class="img_zoom"
+              />
+            </a>
             <p>TOP STORY</p>
           </div>
 
-          <a href="{% url 'post:index' %}" class="post_title"
-            ><h2>
-              Constance Wu Says She Experienced 'Sexual Harassment and
-              Intimidation' by Fresh Off the Boat Producer
-            </h2></a
+          <!-- <a href="{% url 'post:post_detail' post.slug %}">
+            <img
+              src="{{ post.image.url }}"
+              alt="Lights"
+              style="height: 20%; width: 20%"
+            />
+          </a> -->
+
+          <!-- title: {{post.title}} <br>, 
+        category: {{post.category}},<br> 
+        author: {{post.author.get_full_name}} <br>
+        {{post.description}} -->
+
+          <a href="{% url 'post:post_detail' post.slug %}" class="post_title"
+            ><h2>{{post.title}}</h2></a
           >
 
-          <p>
-            Wu also clarified her 2019 tweet about the ABC show's renewal,
-            explaining, "I wanted to have a fresh slate where I didn’t have to
-            start a show with all these memories of abuse".....
-          </p>
+          <p>{{post.contents | truncatechars:200}}</p>
 
           <div class="hero_author_wrapper">
             <div class="hero_author_details">
@@ -378,8 +376,8 @@
               />
 
               <div class="hero_author_text">
-                <p>By Adedotun</p>
-                <p>13th August, 2022</p>
+                <p>By {{post.author.first_name}}</p>
+                <p>{{post.publish_on}}</p>
               </div>
             </div>
 
@@ -392,31 +390,33 @@
           </div>
         </div>
 
+        {% else %}
+
         <div class="hero_right">
           <div class="hero_right_card">
-            <img
-              src="{% static './img/home_page/bad2me.png'%}"
-              alt="Song Art"
-              class="img_zoom"
-            />
+            <a href="{% url 'post:post_detail' post.slug %}">
+              <img src="{{ post.image.url }}" alt="Song Art" class="img_zoom"
+            /></a>
 
             <div class="card_info_wrapper">
               <div class="card_info">
                 <p class="category_label entertainment">ENTERTAINMENT</p>
 
-                <a href="#" class="post_title"
-                  ><h3>Wizkid - Bad to Me (Song)</h3></a
+                <a
+                  href="{% url 'post:post_detail' post.slug %}"
+                  class="post_title"
+                  ><h3>{{post.title}}</h3></a
                 >
 
                 <div class="card_info_bottom">
-                  <p>By Hamzah</p>
-                  <p>September 24, 2022 9:32</p>
+                  <p>By {{post.author.first_name}}</p>
+                  <p>{{post.publish_on}}</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="hero_right_card">
+          <!-- <div class="hero_right_card">
             <img
               src="{% static './img/home_page/eggs.png'%}"
               alt="Picture of eggs"
@@ -480,9 +480,11 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
+
+      {% endif %} {% endfor %}
       <!--  -->
       <!-- HERO SECTION END-->
 
