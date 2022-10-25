@@ -20,8 +20,8 @@ class PostForm(forms.ModelForm):
         attrs={'style':'resize:none;','class': 'meta','placeholder':'Enter your title here'}
         ),
     
-        'tags': forms.TextInput(
-            attrs={ 'style':'resize:none; margin-left:3rem;','class': 'meta','placeholder':'Enter your tags here'}
+        'tags': forms.Textarea(
+            attrs={ 'style':'resize:none;','class': 'meta','placeholder':'Enter your tags here'}
         ),
         # # category= forms.ModelChoiceField(queryset=Category.objects.all() )
         # # # status = forms.CharField(widget=forms.Select(choices=Post.choices))

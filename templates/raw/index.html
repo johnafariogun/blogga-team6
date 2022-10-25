@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,13 +8,13 @@
     <!-- FAVICONS -->
     <link
       rel="shortcut icon"
-      href="{% static './img/logo_resources/Favicon_White.png'%}"
+      href="./img/logo_resources/Favicon_White.png"
       type="image/x-icon"
       id="fav-white"
     />
     <link
       rel="shortcut icon"
-      href="{% static './img/logo_resources/Favicon.png'%}"
+      href="./img/logo_resources/Favicon.png"
       type="image/x-icon"
       id="fav-green"
     />
@@ -48,15 +47,13 @@
     />
 
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="{% static './css/style.css'%}" />
-    <link rel="stylesheet" href="{% static './css/login.css'%}" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/login.css" />
   </head>
 
   <body class="home_body">
     <!-- SCROLL TO TOP BUTTON -->
-    <a href="#top" class="to_top"
-      ><i class="fa-solid fa-arrow-up"></i
-    ></a>
+    <a href="#top" class="to_top"><i class="fa-solid fa-arrow-up"></i></a>
     <!-- SCROLL TO TOP BUTTON -->
 
     <!-- LOGIN MODAL START-->
@@ -64,17 +61,17 @@
     <div class="login-modal">
       <section class="login-body">
         <img
-          src="{% static './img/Login/mobile_blob1.png'%}"
+          src="./img/Login/mobile_blob1.png"
           alt="mobile blob design"
           class="mobile_blob1"
         />
         <img
-          src="{% static './img/Login/mobile_blob2.png'%}"
+          src="./img/Login/mobile_blob2.png"
           alt="mobile blob design"
           class="mobile_blob2"
         />
         <img
-          src="{% static './img/Login/mobile_blob3.png'%}"
+          src="./img/Login/mobile_blob3.png"
           alt="mobile blob design"
           class="mobile_blob3"
         />
@@ -82,16 +79,13 @@
         <main class="login-main">
           <div class="left-div">
             <img
-              src="{% static './img/Login/login_top_blob.png'%}"
+              src="./img/Login/login_top_blob.png"
               alt="blob design "
               class="top_blob"
             />
+            <img src="./img/Login/login_main_image.png" alt="welcome image" />
             <img
-              src="{% static './img/Login/login_main_image.png'%}"
-              alt="welcome image"
-            />
-            <img
-              src="{% static './img/Login/login_bottom_blob.png'%}"
+              src="./img/Login/login_bottom_blob.png"
               alt="blob design "
               class="btm_blob"
             />
@@ -148,12 +142,8 @@
               </div>
 
               <button type="button" class="continue-button">
-                <img
-                  src="{% static './img/google.png'%}"
-                  alt=""
-                  class="google"
-                />
-                &nbsp; Continue With Google
+                <img src="img/google.png" alt="" class="google" /> &nbsp;
+                Continue With Google
               </button>
 
               <p class="base-txt">
@@ -200,7 +190,7 @@
 
       <div class="nav_outer">
         <!-- <a href="./index.html"
-          ><img src="{% static './img/logo_resources/Favicon.png'%}" alt="Blogga Logo Icon"
+          ><img src="./img/logo_resources/Favicon.png" alt="Blogga Logo Icon"
         /></a> -->
 
         <div class="nav_inner">
@@ -272,22 +262,20 @@
               </div>
 
               <img
-                src="{% static './img/home_page/author_hamzy.png'%}"
+                src="./img/home_page/author_hamzy.png"
                 alt="profile picture"
               />
             </div>
           </div>
 
           <a href="./index.html"
-            ><img
-              src="{% static './img/logo_resources/Favicon.png'%}"
-              alt="Blogga Logo Icon"
+            ><img src="./img/logo_resources/Favicon.png" alt="Blogga Logo Icon"
           /></a>
 
           <nav>
             <a href="./index.html"
               ><img
-                src="{% static './img/logo_resources/Favicon_White.png'%}"
+                src="./img/logo_resources/Favicon_White.png"
                 alt="Blogga Logo"
             /></a>
             <ul>
@@ -312,7 +300,7 @@
                   MORE
                   <span class="dropdown_arrow"
                     ><img
-                      src="{% static './img/home_page/dropdown_arrow.png'%}"
+                      src="./img/home_page/dropdown_arrow.png"
                       alt="dropdown"
                   /></span>
                 </label>
@@ -340,10 +328,7 @@
               Subscribe
             </button>
 
-            <img
-              src="{% static './img/home_page/author_hamzy.png'%}"
-              alt="profile picture"
-            />
+            <img src="./img/home_page/author_hamzy.png" alt="profile picture" />
           </div>
         </div>
       </div>
@@ -355,46 +340,36 @@
       <!-- HERO SECTION START -->
       <!--  -->
       <section class="hero" id="to_top">
-        {% for post in posts %}
-        
-        {% if  forloop.counter == 1 %}
-          
-        
-          
         <div class="hero_left">
           <div class="hero_left_img">
-              <a href="{% url 'post:post_detail' post.slug %}">
             <img
-              src="{{post.image.url}}"
+              src="./img/home_page/constance_wu.png"
               alt="Constance wu"
               class="img_zoom"
-            /></a>
+            />
             <p>TOP STORY</p>
           </div>
 
-          <a href="{% url 'post:post_detail' post.slug %}" class="post_title"
+          <a href="./postpage.html" class="post_title"
             ><h2>
-              <!-- Constance Wu Says She Experienced 'Sexual Harassment and
-              Intimidation' by Fresh Off the Boat Producer -->
-              {{post.title}}
+              Constance Wu Says She Experienced 'Sexual Harassment and
+              Intimidation' by Fresh Off the Boat Producer
             </h2></a
           >
 
           <p>
-            {{post.description}}
+            Wu also clarified her 2019 tweet about the ABC show's renewal,
+            explaining, "I wanted to have a fresh slate where I didn’t have to
+            start a show with all these memories of abuse".....
           </p>
 
           <div class="hero_author_wrapper">
-              <a href="{% url 'post:post_detail' post.slug %}">
             <div class="hero_author_details">
-              <img
-                src=""
-                alt="Author Hamzy"
-              /></a>
+              <img src="./img/home_page/author_hamzy.png" alt="Author Hamzy" />
 
               <div class="hero_author_text">
-                <p>By {{post.author.first_name}}</p>
-                <p>{{post.publish_on}}</p>
+                <p>By Adedotun</p>
+                <p>13th August, 2022</p>
               </div>
             </div>
 
@@ -406,45 +381,43 @@
             </div>
           </div>
         </div>
-        {% elif forloop.counter == 2 %}
+
         <div class="hero_right">
           <div class="hero_right_card">
-              <a href="{% url 'post:post_detail' post.slug %}">
             <img
-              src="{{post.image.url}}"
+              src="./img/home_page/bad2me.png"
               alt="Song Art"
               class="img_zoom"
-            /></a>
+            />
 
             <div class="card_info_wrapper">
               <div class="card_info">
-                <p class="category_label entertainment">{{post.category}}</p>
+                <p class="category_label entertainment">ENTERTAINMENT</p>
 
                 <a href="#" class="post_title"
-                  ><h3>{{post.title}}</h3></a
+                  ><h3>Wizkid - Bad to Me (Song)</h3></a
                 >
 
                 <div class="card_info_bottom">
-                  <p>By {{post.author.first_name}}</p>
-                  <p>{{post.publish_on}}</p>
+                  <p>By Hamzah</p>
+                  <p>September 24, 2022 9:32</p>
                 </div>
               </div>
             </div>
           </div>
-          {% elif forloop.counter == 3 %}
+
           <div class="hero_right_card">
-              <a href="{% url 'post:post_detail' post.slug %}">
             <img
-              src="{{post.image.url}}"
+              src="./img/home_page/eggs.png"
               alt="Picture of eggs"
               class="img_zoom"
-            /></a>
+            />
             <div class="card_info_wrapper">
               <div class="card_info">
                 <p class="category_label technology">TECHNOLOGY</p>
 
                 <a href="#" class="post_title"
-                  ><h3>{{post.title}}</h3></a
+                  ><h3>How to un-boil an egg</h3></a
                 >
 
                 <div class="card_info_bottom">
@@ -454,53 +427,52 @@
               </div>
             </div>
           </div>
-          {% elif forloop.counter == 4 %}
+
           <div class="hero_right_card">
-              <a href="{% url 'post:post_detail' post.slug %}">
             <img
-              src="{{post.image.url}}"
+              src="./img/home_page/covid-19.png"
               alt="Vaccine Image"
               class="img_zoom"
-            /></a>
+            />
             <div class="card_info_wrapper">
               <div class="card_info">
-                <p class="category_label health">{{post.category}}</p>
+                <p class="category_label health">HEALTH</p>
 
-                <a href="{% url 'post:post_detail' post.slug %}" class="post_title"
-                  ><h3>{{post.title}}</h3></a
+                <a href="#" class="post_title"
+                  ><h3>Can I get COVID-19 if I’m fully vaccinated?</h3></a
                 >
 
                 <div class="card_info_bottom">
-                  <p>By {{post.author.first_name}}</p>
-                  <p>{{post.publish_on}}</p>
+                  <p>By Hamzah</p>
+                  <p>September 24, 2022 9:32</p>
                 </div>
               </div>
             </div>
           </div>
-          {% elif forloop.counter == 5%}
+
           <div class="hero_right_card">
-         <a href="{% url 'post:post_detail' post.slug %}">
-                <img src="{{ post.image.url }}" alt="Lights" class="img_zoom"></a>
+            <img
+              src="./img/home_page/benin_head.png"
+              alt="Benin Bronze Head"
+              class="img_zoom"
+            />
             <div class="card_info_wrapper">
               <div class="card_info">
-                <p class="category_label art">{{post.category}}</p>
+                <p class="category_label art">ART</p>
 
-                <a href= "{% url 'post:post_detail' post.slug %}" class="post_title"
-                  ><h3>{{post.title}}</h3></a
+                <a href="#" class="post_title"
+                  ><h3>The Benin Bronze Head</h3></a
                 >
 
                 <div class="card_info_bottom">
-                  <p>By {{post.author}}</p>
-                  <p>{{post.publish_on}}</p>
+                  <p>By nifemi.</p>
+                  <p>September 24, 2022 9:32</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        {% endif %}
-        {% endfor %}
       </section>
-
       <!--  -->
       <!-- HERO SECTION END-->
 
@@ -531,7 +503,7 @@
             <div class="trending_card">
               <div class="trending_card_img">
                 <img
-                  src="{% static './img/home_page/koo_koo_fun.png'%}"
+                  src="./img/home_page/koo_koo_fun.png"
                   alt="Song Art"
                   class="img_zoom"
                 />
@@ -558,7 +530,7 @@
             <div class="trending_card">
               <div class="trending_card_img">
                 <img
-                  src="{% static './img/home_page/burna_boy.png'%}"
+                  src="./img/home_page/burna_boy.png"
                   alt="Image of Burna Boy"
                   class="img_zoom"
                 />
@@ -584,7 +556,7 @@
             <div class="trending_card">
               <div class="trending_card_img">
                 <img
-                  src="{% static './img/home_page/Remmy-img.jpeg'%}"
+                  src="./img/home_page/Remmy-img.jpeg"
                   alt="Image of Rema & interviewer"
                   class="img_zoom"
                 />
@@ -608,7 +580,7 @@
             <div class="trending_card">
               <div class="trending_card_img">
                 <img
-                  src="{% static './img/home_page/burna_boy.png'%} "
+                  src="./img/home_page/burna_boy.png"
                   alt="Image of Burna Boy"
                   class="img_zoom"
                 />
@@ -634,7 +606,7 @@
             <div class="trending_card">
               <div class="trending_card_img">
                 <img
-                  src="{% static './img/home_page/Remmy-img.jpeg'%} "
+                  src="./img/home_page/Remmy-img.jpeg"
                   alt="Image of Rema & interviewer"
                   class="img_zoom"
                 />
@@ -679,10 +651,7 @@
 
           <div class="writers_content">
             <div class="writers_cards">
-              <img
-                src="{% static './img/home_page/author_hamzy.png'%}"
-                alt="Author Hamzy"
-              />
+              <img src="./img/home_page/author_hamzy.png" alt="Author Hamzy" />
 
               <div class="writers_cards_info">
                 <p>HAMZAH OPEMIPO</p>
@@ -696,10 +665,7 @@
             </div>
 
             <div class="writers_cards">
-              <img
-                src="{% static './img/home_page/author_dotun.png'%}"
-                alt="author_dotun"
-              />
+              <img src="./img/home_page/author_dotun.png" alt="author_dotun" />
 
               <div class="writers_cards_info">
                 <p>ADEDOTUN SOLARIN</p>
@@ -714,7 +680,7 @@
 
             <div class="writers_cards">
               <img
-                src="{% static './img/home_page/author_nifemi.png'%}"
+                src="./img/home_page/author_nifemi.png"
                 alt="author_nifemi"
               />
 
@@ -730,10 +696,7 @@
             </div>
 
             <div class="writers_cards">
-              <img
-                src="{% static './img/home_page/author_rachy.png'%}"
-                alt="Author rachy"
-              />
+              <img src="./img/home_page/author_rachy.png" alt="Author rachy" />
 
               <div class="writers_cards_info">
                 <p>CHIKA RACHEAL EZEH</p>
@@ -748,7 +711,7 @@
 
             <div class="writers_cards">
               <img
-                src="{% static './img/home_page/author_taofikat.png'%}"
+                src="./img/home_page/author_taofikat.png"
                 alt="Author taofikat"
               />
 
@@ -764,10 +727,7 @@
             </div>
 
             <div class="writers_cards">
-              <img
-                src="{% static './img/home_page/author_amara.png'%}"
-                alt="author_amara"
-              />
+              <img src="./img/home_page/author_amara.png" alt="author_amara" />
 
               <div class="writers_cards_info">
                 <p>AMARA ONWUNZO</p>
@@ -791,7 +751,7 @@
           <div class="latest_content">
             <div class="latest_cards">
               <img
-                src="{% static './img/home_page/rings_of_power.png'%}"
+                src="./img/home_page/rings_of_power.png"
                 alt="Rings of power snapshot"
                 class="img_zoom"
               />
@@ -812,7 +772,7 @@
 
             <div class="latest_cards">
               <img
-                src="{% static './img/home_page/2023_elections.png'%}"
+                src="./img/home_page/2023_elections.png"
                 alt="Nigerian Flag"
                 class="img_zoom"
               />
@@ -831,7 +791,7 @@
 
             <div class="latest_cards">
               <img
-                src="{% static './img/home_page/house_of_the_dragon.png'%}"
+                src="./img/home_page/house_of_the_dragon.png"
                 alt="house of the dragon snapshot"
                 class="img_zoom"
               />
@@ -850,7 +810,7 @@
 
             <div class="latest_cards">
               <img
-                src="{% static './img/home_page/tobi_amusan.png'%}"
+                src="./img/home_page/tobi_amusan.png"
                 alt="Tobi Amusan"
                 class="img_zoom"
               />
@@ -872,7 +832,7 @@
 
             <div class="latest_cards">
               <img
-                src="{% static './img/home_page/bandits_zamfara.png'%}"
+                src="./img/home_page/bandits_zamfara.png"
                 alt="Zamfara"
                 class="img_zoom"
               />
@@ -990,10 +950,7 @@
     <!--  -->
     <footer class="main_footer">
       <div class="footer_top">
-        <img
-          src="{% static './img/logo_resources/Favicon_White.png'%}"
-          alt="Blogga Icon"
-        />
+        <img src="./img/logo_resources/Favicon_White.png" alt="Blogga Icon" />
         <ul>
           <li><a href="#">ADVERTISE</a></li>
           <li><a href="./write-for-us.html">WRITE FOR US</a></li>
@@ -1001,7 +958,7 @@
           <li>
             <a href="./index.html"
               ><img
-                src="{% static './img/logo_resources/Favicon_White.png'%}"
+                src="./img/logo_resources/Favicon_White.png"
                 alt="Blogga Icon"
             /></a>
           </li>
@@ -1064,6 +1021,6 @@
       });
     </script>
 
-    <script src="{% static './js/index.js'%}"></script>
+    <script src="./backend/static/js/index.js"></script>
   </body>
 </html>
