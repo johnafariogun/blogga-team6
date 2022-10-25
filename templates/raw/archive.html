@@ -134,7 +134,7 @@
                 <i class="bi bi-eye-slash" onclick="passwordToggle()"></i>
               </div>
 
-              <a href="./forgotpassword.html" class="forgot-password"
+              <a href="{% url 'forgotpassword' %}" class="forgot-password"
                 >Forgot Password?</a
               >
               <!-- <br /> -->
@@ -179,7 +179,7 @@
           <div class="banner_left">
             <p>Have a story to share?</p>
 
-            <button onclick="window.location.href='./contact-us.html';">
+            <button onclick="window.location.href='{% url contact-us %}';">
               Contact Us
             </button>
           </div>
@@ -226,13 +226,13 @@
             <div class="mobile_menu_categories">
               <p>CATEGORIES</p>
               <ul>
-                <a href="./fashion.html"
+                <a href="{% url fashion %}"
                   ><li class="mob_fashion">FASHION</li></a
                 >
-                <a href="./category-page.html"
+                <a href="{% url category-page %}"
                   ><li class="mob_entertaiment">ENTERTAINMENT</li></a
                 >
-                <a href="./technology.html"
+                <a href="{% url technology %}"
                   ><li class="mob_tech">TECHNOLOGY</li></a
                 >
                 <a href="#"><li class="mob_health">HEALTH</li></a>
@@ -247,11 +247,11 @@
             <div class="mobile_menu_links">
               <p>MORE</p>
               <div class="mobile_menu_links_top">
-                <a href="#">TEAM</a> <a href="./archive.html">ARCHIVE</a>
+                <a href="#">TEAM</a> <a href="{% url archive %}">ARCHIVE</a>
               </div>
               <div class="mobile_menu_links_bottom">
-                <a href="./write-for-us.html">WRITE FOR US</a>
-                <a href="./contact-us.html">CONTACT</a>
+                <a href="{% url write-for-us %}">WRITE FOR US</a>
+                <a href="{% url contact-us %}">CONTACT</a>
               </div>
             </div>
 
@@ -276,26 +276,26 @@
           </div>
 
           <nav>
-            <a href="./index.html"
+            <a href="{% url index %}"
               ><img
                 src="{% static './img/logo_resources/Favicon_White.png' %}"
                 alt="Blogga Logo"
             /></a>
             <ul>
-              <li><a href="./fashion.html" class="nav_fashion">FASHION</a></li>
+              <li><a href="{% url fashion %}" class="nav_fashion">FASHION</a></li>
               <li>
-                <a href="./category-page.html" class="nav_entertainment"
+                <a href="{% url category-page %}" class="nav_entertainment"
                   >ENTERTAINMENT</a
                 >
               </li>
               <li>
-                <a href="./technology.html" class="nav_tech">TECHNOLOGY</a>
+                <a href="{% url technology %}" class="nav_tech">TECHNOLOGY</a>
               </li>
-              <li><a href="#" class="nav_health">HEALTH</a></li>
-              <li><a href="#" class="nav_politics">POLITICS</a></li>
-              <li><a href="#" class="nav_edu">EDUCATION</a></li>
+              <li><a href="{% url # %}" class="nav_health">HEALTH</a></li>
+              <li><a href="{% url # %}" class="nav_politics">POLITICS</a></li>
+              <li><a href="{% url # %}" class="nav_edu">EDUCATION</a></li>
               <!-- <li><a href="#" class="nav_food">FOOD</a></li> -->
-              <li><a href="#" class="nav_art">ART</a></li>
+              <li><a href="{% url # %}" class="nav_art">ART</a></li>
               <li>
                 <label for="more_check" class="more">
                   MORE
@@ -309,10 +309,10 @@
 
                 <div class="more_dropdown">
                   <ul>
-                    <li><a href="#">TEAM</a></li>
-                    <li><a href="./write-for-us.html">WRITE FOR US</a></li>
-                    <li><a href="./archive.html">ARCHIVE</a></li>
-                    <li><a href="./contact-us.html">CONTACT</a></li>
+                    <li><a href="{% url # %}">TEAM</a></li>
+                    <li><a href="{% url write-for-us %}">WRITE FOR US</a></li>
+                    <li><a href="{% url archive %}">ARCHIVE</a></li>
+                    <li><a href="{% url contact-us %}">CONTACT</a></li>
                   </ul>
                 </div>
               </li>
@@ -543,38 +543,38 @@
         <img src="{% static './img/logo_resources/Favicon_White.png' %}" alt="Blogga Icon" />
         <ul>
           <li><a href="#">ADVERTISE</a></li>
-          <li><a href="./write-for-us.html">WRITE FOR US</a></li>
-          <li><a href="./category-page.html">CATEGORIES</a></li>
+          <li><a href="{% url write-for-us %}">WRITE FOR US</a></li>
+          <li><a href="{% url category-page %}">CATEGORIES</a></li>
           <li>
-            <a href="./index.html"
+            <a href="{% url index %}"
               ><img
                 src="{% static './img/logo_resources/Favicon_White.png' %}"
                 alt="Blogga Icon"
             /></a>
           </li>
-          <li><a href="./archive.html">ARCHIVES</a></li>
-          <li><a href="#">TERMS OF SERVICE</a></li>
-          <li><a href="./privacypolicy.html">PRIVACY</a></li>
+          <li><a href="{% url archive %}">ARCHIVES</a></li>
+          <li><a href="{% url # %}">TERMS OF SERVICE</a></li>
+          <li><a href="{% url privacypolicy %}">PRIVACY</a></li>
         </ul>
       </div>
 
       <div class="footer_middle">
-        <a href="#">
+        <a href="{% url # %}">
           <i class="fa-brands fa-facebook"></i>&ThinSpace;
           <span>FACEBOOK</span> </a
-        ><a href="#"
+        ><a href="{% url # %}"
           ><i class="fa-brands fa-twitter"></i>&ThinSpace;
           <span>TWITTER</span> </a
-        ><a href="#"
+        ><a href="{% url # %}"
           ><i class="fa-brands fa-linkedin-in"></i>&ThinSpace;
           <span>LINKEDIN</span> </a
-        ><a href="#"
+        ><a href="{% url # %}"
           ><i class="fa-brands fa-youtube"></i>&ThinSpace;
           <span>YOUTUBE</span></a
-        ><a href="#"
+        ><a href="{% url # %}"
           ><i class="fa-brands fa-instagram"></i>&ThinSpace;
           <span>INSTAGRAM</span> </a
-        ><a href="#"
+        ><a href="{% url # %}"
           ><i class="fa-brands fa-pinterest"></i>&ThinSpace;
           <span>PINTEREST</span>
         </a>
@@ -582,7 +582,7 @@
 
       <div class="footer_bottom">
         <p>© 2022 The Blogga Team All Rights Reserved</p>
-        <a href="#">Site Map</a>
+        <a href="{% url # %}">Site Map</a>
       </div>
     </footer>
 
