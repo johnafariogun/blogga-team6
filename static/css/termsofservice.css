@@ -1,4 +1,4 @@
-* {
+/* * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -32,7 +32,7 @@ li,
 p {
   font-size: 14px;
   text-decoration: none;
-}
+} */
 
 .ero {
   text-align: center;
@@ -43,18 +43,18 @@ p {
 .terms {
   font-weight: 600;
   font-size: 32px;
-  border-bottom: 1px solid rgba(34, 68, 62, 1);
+  border-bottom: 1px solid rgba(45, 45, 45, 0.3);
   padding: 20px;
 }
 .body {
   text-align: left;
   font-weight: 400;
-  font-size: 17.67px;
+  font-size: 15px;
   width: 80%;
   padding: 40px;
   margin-left: 100px;
   color: rgba(45, 45, 45, 1);
-  border-bottom: 1px solid rgba(45, 45, 45, 1);
+  /* border-bottom: 1px solid rgba(45, 45, 45, 1); */
 }
 .body .terms {
   font-size: 32px;

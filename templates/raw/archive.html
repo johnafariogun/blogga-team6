@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -98,7 +99,10 @@
               alt="blob design "
               class="top_blob"
             />
-            <img src="{% static './img/Login/login_main_image.png' %}" alt="welcome image" />
+            <img
+              src="{% static './img/Login/login_main_image.png' %}"
+              alt="welcome image"
+            />
             <img
               src="{% static './img/Login/login_bottom_blob.png' %}"
               alt="blob design "
@@ -157,13 +161,19 @@
               </div>
 
               <button type="button" class="continue-button">
-                <img src="{% static './img/google.png' %}" alt="" class="google" /> &nbsp;
-                Continue With Google
+                <img
+                  src="{% static './img/google.png' %}"
+                  alt=""
+                  class="google"
+                />
+                &nbsp; Continue With Google
               </button>
 
               <p class="base-txt">
                 Become a Blogga?
-                <a href="{% url 'signup' %}" class="signup-link"> Write For Us</a>
+                <a href="{% url 'signup' %}" class="signup-link">
+                  Write For Us</a
+                >
               </p>
             </div>
           </div>
@@ -179,9 +189,7 @@
           <div class="banner_left">
             <p>Have a story to share?</p>
 
-            <button onclick="window.location.href='{% url contact-us %}';">
-              Contact Us
-            </button>
+            <button onclick="window.location.href='#';">Contact Us</button>
           </div>
 
           <div class="banner_search">
@@ -199,7 +207,9 @@
 
       <div class="nav_outer">
         <a href="{% url 'index' %}"
-          ><img src="{% static './img/logo_resources/Favicon.png' %}" alt="Blogga Logo Icon"
+          ><img
+            src="{% static './img/logo_resources/Favicon.png' %}"
+            alt="Blogga Logo Icon"
         /></a>
 
         <div class="nav_inner">
@@ -229,7 +239,7 @@
                 <a href="{% url fashion %}"
                   ><li class="mob_fashion">FASHION</li></a
                 >
-                <a href="{% url category-page %}"
+                <a href="{% url 'post_category' %}"
                   ><li class="mob_entertaiment">ENTERTAINMENT</li></a
                 >
                 <a href="{% url technology %}"
@@ -250,8 +260,8 @@
                 <a href="#">TEAM</a> <a href="{% url archive %}">ARCHIVE</a>
               </div>
               <div class="mobile_menu_links_bottom">
-                <a href="{% url write-for-us %}">WRITE FOR US</a>
-                <a href="{% url contact-us %}">CONTACT</a>
+                <a href="#">WRITE FOR US</a>
+                <a href="#">CONTACT</a>
               </div>
             </div>
 
@@ -276,13 +286,15 @@
           </div>
 
           <nav>
-            <a href="{% url index %}"
+            <a href="{% url 'index' %}"
               ><img
                 src="{% static './img/logo_resources/Favicon_White.png' %}"
                 alt="Blogga Logo"
             /></a>
             <ul>
-              <li><a href="{% url fashion %}" class="nav_fashion">FASHION</a></li>
+              <li>
+                <a href="{% url fashion %}" class="nav_fashion">FASHION</a>
+              </li>
               <li>
                 <a href="{% url category-page %}" class="nav_entertainment"
                   >ENTERTAINMENT</a
@@ -330,7 +342,10 @@
               Subscribe
             </button>
 
-            <img src="{% static './img/home_page/author_hamzy.png' %}" alt="profile picture" />
+            <img
+              src="{% static './img/home_page/author_hamzy.png' %}"
+              alt="profile picture"
+            />
           </div>
         </div>
       </div>
@@ -540,7 +555,10 @@
 
     <footer class="main_footer">
       <div class="footer_top">
-        <img src="{% static './img/logo_resources/Favicon_White.png' %}" alt="Blogga Icon" />
+        <img
+          src="{% static './img/logo_resources/Favicon_White.png' %}"
+          alt="Blogga Icon"
+        />
         <ul>
           <li><a href="#">ADVERTISE</a></li>
           <li><a href="{% url write-for-us %}">WRITE FOR US</a></li>

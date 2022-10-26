@@ -59,6 +59,23 @@
 
     <!-- LOGIN MODAL START-->
     <!--  -->
+    <div class="login-modal">
+      <section class="login-body">
+        <img
+          src="{% static './img/Login/mobile_blob1.png'%}"
+          alt="mobile blob design"
+          class="mobile_blob1"
+        />
+        <img
+          src="{% static './img/Login/mobile_blob2.png'%}"
+          alt="mobile blob design"
+          class="mobile_blob2"
+        />
+        <img
+          src="{% static './img/Login/mobile_blob3.png'%}"
+          alt="mobile blob design"
+          class="mobile_blob3"
+        />
 
         <main class="login-main">
           <div class="left-div">
@@ -109,6 +126,7 @@
               <a href="./forgotpassword.html" class="forgot-password"
                 >Forgot Password?</a
               >
+              <!-- <br /> -->
 
               <label for="remember-me" class="remem-label">
                 <input
@@ -307,6 +325,7 @@
           <i class="fa-solid fa-magnifying-glass mobile_search"></i>
 
           <div class="nav_btns">
+            <!-- onclick="showLoginModal() -->
             <button class="button">
               <a href="{% url 'login' %}">Sign In</a>
             </button>

@@ -2,30 +2,37 @@
 {% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogga|our team</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogga | Terms of Service</title>
+  <!-- FAVICONS -->
     <link
-    rel="shortcut icon"
-    href="./img/logo_resources/Favicon_White.png"
-    type="image/x-icon"
-    id="fav-white"
-  />
-  <link
-  rel="shortcut icon"
-  href="./img/logo_resources/Favicon.png"
-  type="image/x-icon"
-  id="fav-green"
- />
- <link
- href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
- rel="stylesheet"
-/>
-<link
+      rel="shortcut icon"
+      href="{% static './img/logo_resources/Favicon_White.png'%}"
+      type="image/x-icon"
+      id="fav-white"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static './img/logo_resources/Favicon.png'%}"
+      type="image/x-icon"
+      id="fav-green"
+    />
+
+    <!-- GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- BOOTSTRAP ICONS -->
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
     />
+
+    <!-- FONTAWESOME -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -33,13 +40,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-  />
     <!-- <link rel="stylesheet" href="" /> -->
-    <link rel="stylesheet" href="{% static './css/termsofservice.css'%}" />
-    <link rel="stylesheet" href="{% static './css/style.css'%}" />
+  <link rel="stylesheet" href="{% static './css/termsofservice.css'%}" />
+  <link rel="stylesheet" href="{% static './css/style.css'%}" />
 
 </head>
 <body>
@@ -184,10 +187,6 @@
       <!-- top green banner -->
 
       <div class="nav_outer">
-        <!-- <a href="{% url 'post:index'%}"
-          ><img src="{% static './img/logo_resources/Favicon.png'%}" alt="Blogga Logo Icon"
-        /></a> -->
-
         <div class="nav_inner">
           <div class="hamburger">
             <span class="span1"></span><span class="span2"></span
@@ -316,7 +315,9 @@
           <i class="fa-solid fa-magnifying-glass mobile_search"></i>
 
           <div class="nav_btns">
-            <button class="button" onclick="showLoginModal()">Sign In</button>
+            <button class="button">
+              <a href="{% url 'login' %}">Sign In</a>
+            </button>
             <button
               class="subscribe button"
               onclick="window.location.href='#subscribe';"
@@ -503,6 +504,7 @@ By phone number: 234 8123 456 789
  
    <!-- SUBSCRIBE SECTION START-->
       <!--  -->
+      <hr>
       <section class="newsletter" id="subscribe">
         <h2>STAY UPDATED</h2>
 
