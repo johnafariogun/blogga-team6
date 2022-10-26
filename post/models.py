@@ -7,6 +7,7 @@ from django.contrib.auth import get_user_model
 from random import randint
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+from django.urls import reverse
 # Create your models here.
 
 
@@ -83,12 +84,13 @@ class Post(models.Model):
     
    
     def save(self, *args, **kwargs):
-        mySlug = str(self.category) + str('/') + str(self.title)
+        mySlug = str(self.category) + str('-') + str(self.title)
+        print(mySlug)
         self.slug = slugify(mySlug)
         super(Post, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        from django.core.urlresolvers import reverse
+        # from django.core.urlresolvers import reverse
         return reverse('post:post_detail', kwargs={'slug': self.slug})
 
 

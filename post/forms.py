@@ -16,23 +16,21 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ['title', 'status', 'description','category','image','tags','contents']
         widgets = {
-        # "title": forms.TextInput(
-        # attrs={'style':'resize:none;','class': 'meta','form' :'usrform','placeholder':'Enter your title here'}
-        # ),
-    
-        # 'tags': forms.TextInput(
-        #     attrs={ 'style':'resize:none;','class': 'meta','form' :'usrform','placeholder':'Enter your tags here'}
-        # ),
-        # category= forms.ModelChoiceField(queryset=Category.objects.all() )
-        # # status = forms.CharField(widget=forms.Select(choices=Post.choices))
-
-        "description": forms.TextInput(
-            attrs={'style':'resize:none;','class': 'meta','id':'', 'form' :'usrform','name':'comment','placeholder':'Enter your post description here'}
+        "title": forms.Textarea(
+        attrs={'style':'resize:none;','class': 'meta','placeholder':'Enter your title here'}
         ),
+        'tags': forms.TextInput(
+            attrs={ 'style':'resize:none; margin-left:3rem;','class': 'meta','placeholder':'Enter your tags here'}
+        ),
+        # # category= forms.ModelChoiceField(queryset=Category.objects.all() )
+        # # # status = forms.CharField(widget=forms.Select(choices=Post.choices))
 
+        "description": forms.Textarea(
+            attrs={'style':'resize:none;','class': 'meta','placeholder':'Enter your post description here'}
+        ),
+# <input type="file" name="image" accept="image/*" id="id_image">
         # "image": forms.ImageField(
-        # # , 
-        #     # widget =   
+            # attrs={''}
         # )
         }
 
