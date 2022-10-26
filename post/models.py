@@ -33,8 +33,9 @@ class Category(models.Model):
     def get_cat():
         results, _ = Category.objects.get_or_create(name='Generic')
         return results.pk
-
-
+    
+    def get_absolute_url(self):
+        return f"/category/{self.category_slug}"
 class SubCategory(models.Model):
     name = models.CharField(max_length = 100, unique=True, null=True)
     category = models.ForeignKey(Category, on_delete = models.CASCADE, blank =True, null = True)

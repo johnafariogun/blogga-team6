@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Post 
+from .models import Post, Category
 from .forms import PostForm,CommentForm
 from django.contrib import messages
 from django.urls import reverse
@@ -70,7 +70,10 @@ def postDetail(request, slug):
     }
     return render(request, 'post/detail.html', context)
 
-
+def category_view(request, category_slug):
+    category = Category.objects.get(category_slug=category_slug)
+    post_by_category = Post.objects.filter(category=category, status= 'published')
+    return render(request, 'post/category.html', {'posts':post_by_category})
 
 # this is supposed to be for only bloggers but might just redo it
 def bloggerDetail(request, slug):
@@ -111,16 +114,16 @@ def update(request, slug):
     return render(request, 'post/update.html', context)
 
 
-class CategoryListView(ListView):
-    template_name = 'post/category.html'
-    context_object_name = 'category_list'
+# class CategoryListView(ListView):
+#     template_name = 'post/category.html'
+#     context_object_name = 'category_list'
 
-    def get_queryset(self):
-        content = {
-            'categories': self.kwargs['category'],
-            'posts': Post.objects.filter(category__name = self.kwargs['category']).filter(status='published')
-        }
-        return content 
+#     def get_queryset(self):
+#         content = {
+#             'categories': self.kwargs['category'],
+#             'posts': Post.objects.filter(category__name = self.kwargs['category']).filter(status='published')
+#         }
+#         return content 
 
 
 @ login_required
@@ -132,11 +135,11 @@ def bookmarks(request):
 
 def contents(request):
     posts = Post.objects.filter(author = request.user).order_by('-publish_on')
-    common_tags = Post.tags.most_common()[:4]
+    # common_tags = Post.tags.most_common()[:4]
 
     context = {
         'posts': posts,
-        'common_tags': common_tags
+        # 'common_tags': common_tags
     }
     
     return render(request, 'post/content-page.html', context)

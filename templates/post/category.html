@@ -8,7 +8,7 @@
 </head>
 <body>
     {{category_list.categories}} <br>
-    {% for post in category_list.posts %}
+    {% for post in posts %}
     <br>
     <a href="{% url 'post:post_detail' post.slug %}">{{post.title}}</a><br>
     <a href="{{ post.image.url }}">
