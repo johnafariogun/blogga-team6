@@ -31,8 +31,8 @@ SECRET_KEY = '73siuk@n$yr&)_kg-bnu_t)ed=+q)*n7iq3s-s*snqrr3h9h!&'
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['web-production-c906.up.railway.app/','127.0.0.1']
-CSRF_TRUSTED_ORIGINS= ['https://web-production-c906.up.railway.app/']
+ALLOWED_HOSTS = ['web-production-c906.up.railway.app','127.0.0.1']
+CSRF_TRUSTED_ORIGINS= ['https://web-production-c906.up.railway.app']
 # CORS_ALLOWED_ORIGINS =  ['web-production-c906.up.railway.app',"http://localhost:8080",
 #     "http://127.0.0.1:9000",]
 # Application definition
