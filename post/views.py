@@ -161,9 +161,7 @@ def profile_view(request):
 
     return render(request, 'raw/profilepage.html')
 
-def contact_view(request):
 
-    return render(request, 'raw/contact-us.html')
 
 def terms_view(request):
 

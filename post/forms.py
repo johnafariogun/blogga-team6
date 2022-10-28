@@ -52,19 +52,3 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         fields = ('avatar',)
 
-class ContactForm(forms.Form):
-    """this is a form for users to cntact us on what they need from our site"""
-    first_name = forms.CharField(max_length = 300,required = True,label='First Name',
-         widget= forms.TextInput(
-            attrs={'class': '', 'id' :'contact_fname','placeholder':'FIRST NAME'}
-    )) 
-    last_name = forms.CharField(max_length = 300,required = True,label='Last Name', widget= forms.TextInput(
-        attrs={'class': '', 'contact_lname' :'','placeholder':'LAST NAME'}
-    )) 
-    email = forms.EmailField(required = True,label='Email', widget= forms.EmailInput(
-        attrs={'class': '', 'id' :'contact_email','placeholder':'email@email.com'}
-    )) 
-    message_ = forms.CharField(max_length = 5000,required = True,label='First Name', widget= forms.Textarea(
-        attrs={'rows':10, 'cols':30,'class': '', 'id' :'contact_message','placeholder':'Your Message'}
-    )) 
-

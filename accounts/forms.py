@@ -54,3 +54,20 @@ class PwdChangeForm(PasswordChangeForm):
             attrs={'class': 'form-control','placeholder':'Repeat new password','id': 'form-New2Password'}
         )
     )
+
+class ContactForm(forms.Form):
+    """this is a form for users to cntact us on what they need from our site"""
+    first_name = forms.CharField(max_length = 300,required = True,label='',
+         widget= forms.TextInput(
+            attrs={'class': '', 'id' :'contact_fname','placeholder':'FIRST NAME'}
+    )) 
+    last_name = forms.CharField(max_length = 300,required = True,label='',widget= forms.TextInput(
+        attrs={'class': '', 'contact_lname' :'','placeholder':'LAST NAME'}
+    )) 
+    email = forms.EmailField(required = True,label='',widget= forms.EmailInput(
+        attrs={'class': '', 'id' :'contact_email','placeholder':'email@email.com'}
+    )) 
+    message_ = forms.CharField(max_length = 5000,label='',required = True, widget= forms.Textarea(
+        attrs={'rows':10, 'cols':30,'class': '', 'id' :'contact_message','placeholder':'Your Message'}
+    )) 
+

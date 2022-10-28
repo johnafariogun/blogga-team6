@@ -156,7 +156,7 @@ EMAIL_USE_SSL = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'afariogun.john2002@gmail.com'
 # config("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = 'fecdmgzpnvtiaksb'
+EMAIL_HOST_PASSWORD = 'lcbyxnnfocuqpwoc'
 # config("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = '465'
 
