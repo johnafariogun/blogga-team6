@@ -31,12 +31,12 @@ SECRET_KEY = '73siuk@n$yr&)_kg-bnu_t)ed=+q)*n7iq3s-s*snqrr3h9h!&'
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['https://web-production-c906.up.railway.app',"http://localhost:8080",
+ALLOWED_HOSTS = ['web-production-c906.up.railway.app/',"http://localhost:8080",
     "http://127.0.0.1:9000",]
-CSRF_TRUSTED_ORIGINS= ['https://web-production-c906.up.railway.app',"http://localhost:8080",
+CSRF_TRUSTED_ORIGINS= ['https://web-production-c906.up.railway.app/',"http://localhost:8080",
     "http://127.0.0.1:9000",]
-CORS_ALLOWED_ORIGINS =  ['https://web-production-c906.up.railway.app',"http://localhost:8080",
-    "http://127.0.0.1:9000",]
+# CORS_ALLOWED_ORIGINS =  ['web-production-c906.up.railway.app',"http://localhost:8080",
+#     "http://127.0.0.1:9000",]
 # Application definition
 
 INSTALLED_APPS = [
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'accounts',
     'post',
     # 3rd party applications
-      "corsheaders",
+    #   "corsheaders",
     'django_extensions',
     'django_summernote',
     'taggit',
@@ -60,7 +60,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-     "corsheaders.middleware.CorsMiddleware",
+    #  "corsheaders.middleware.CorsMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
