@@ -685,7 +685,8 @@ header {
   flex-basis: 40%;
 }
 .hero_left_img {
-  width: 100%;
+  width: 528px;
+  height: 375px;
   position: relative;
 }
 .hero_left_img > img {
@@ -772,7 +773,8 @@ header {
   position: relative;
 }
 .hero_right_card img {
-  width: 100%;
+  width: 297px;
+  height: 247px;
 }
 .card_info_wrapper {
   background-color: white;
