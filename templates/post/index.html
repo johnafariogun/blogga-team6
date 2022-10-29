@@ -49,319 +49,21 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
-    
+
     {% block stylesheet %}
     <link rel="stylesheet" href="{% static './css/style.css'%}" />
     <link rel="stylesheet" href="{% static './css/login.css'%}" />
     {% endblock stylesheet %}
-      
 
     <!-- STYLESHEETS -->
-  
   </head>
-  
+
   <body class="home_body">
-<<<<<<< HEAD
     <!-- SCROLL TO TOP BUTTON -->
     <a href="#top" class="to_top"><i class="fa-solid fa-arrow-up"></i></a>
     <!-- SCROLL TO TOP BUTTON -->
 
-    <!-- LOGIN MODAL START-->
-    <!--  -->
-    <div class="login-modal">
-      <section class="login-body">
-        <img
-          src="{% static './img/Login/mobile_blob1.png'%}"
-          alt="mobile blob design"
-          class="mobile_blob1"
-        />
-        <img
-          src="{% static './img/Login/mobile_blob2.png'%}"
-          alt="mobile blob design"
-          class="mobile_blob2"
-        />
-        <img
-          src="{% static './img/Login/mobile_blob3.png'%}"
-          alt="mobile blob design"
-          class="mobile_blob3"
-        />
-
-        <main class="login-main">
-          <div class="left-div">
-            <img
-              src="{% static './img/Login/login_top_blob.png'%}"
-              alt="blob design "
-              class="top_blob"
-            />
-            <img
-              src="{% static './img/Login/login_main_image.png'%}"
-              alt="welcome image"
-            />
-            <img
-              src="{% static './img/Login/login_bottom_blob.png'%}"
-              alt="blob design "
-              class="btm_blob"
-            />
-          </div>
-
-          <div class="right-div">
-            <i
-              class="fa-solid fa-xmark login-modal-close"
-              onclick="hideLoginModal()"
-            ></i>
-            <div class="right-div-container">
-              <h3 class="head-txt">Welcome Back : )</h3>
-
-              <input
-                type="text"
-                placeholder="Username"
-                id="login-username"
-                required
-              />
-
-              <br />
-
-              <div class="password-eye">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  id="login-password"
-                  required
-                />
-                <i class="bi bi-eye" onclick="passwordToggle()"></i>
-                <i class="bi bi-eye-slash" onclick="passwordToggle()"></i>
-              </div>
-
-              <a href="./forgotpassword.html" class="forgot-password"
-                >Forgot Password?</a
-              >
-              <!-- <br /> -->
-
-              <label for="remember-me" class="remem-label">
-                <input
-                  type="checkbox"
-                  name="remember-me"
-                  id="remember-me"
-                />&nbsp; <small>Remember Me</small></label
-              >
-              <br />
-
-              <button type="button" class="login-button">Log In</button>
-
-              <div class="or-separator">
-                <hr />
-                <p>OR</p>
-                <hr />
-              </div>
-
-              <button type="button" class="continue-button">
-                <img
-                  src="{% static './img/google.png'%}"
-                  alt=""
-                  class="google"
-                />
-                &nbsp; Continue With Google
-              </button>
-
-              <p class="base-txt">
-                Become a Blogga?
-                <a href="./write-for-us.html" class="signup-link">
-                  Write For Us</a
-                >
-              </p>
-            </div>
-          </div>
-        </main>
-      </section>
-    </div>
-    <!--  -->
-    <!-- LOGIN MODAL END-->
-
-    <!-- HEADER & MOBILE MENU  START-->
-    <!--  -->
-    <header>
-      <!-- top green banner -->
-      <div class="banner">
-        <div class="banner_wrapper">
-          <div class="banner_left">
-            <p>Have a story to share?</p>
-
-            <button onclick="window.location.href='./contact-us.html';">
-              Contact Us
-            </button>
-          </div>
-
-          <div class="banner_search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" name="" id="" placeholder="Search" />
-          </div>
-        </div>
-
-        <div class="banner_socials">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-      </div>
-      <!-- top green banner -->
-
-      <div class="nav_outer">
-        <div class="nav_inner">
-          <div class="hamburger">
-            <span class="span1"></span><span class="span2"></span
-            ><span class="span3"></span>
-          </div>
-
-          <div class="hamburger_close">
-            <i class="fa-solid fa-xmark login-modal-close"></i>
-          </div>
-
-          <div class="mobile_menu">
-            <div class="mobile_menu_search">
-              <input
-                type="search"
-                name=""
-                id=""
-                placeholder="Search anything..."
-              />
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-
-            <div class="mobile_menu_categories">
-              <p>CATEGORIES</p>
-              <ul>
-                <a href="./fashion.html"
-                  ><li class="mob_fashion">FASHION</li></a
-                >
-                <a href="{% url 'post:index'%}"
-                  ><li class="mob_entertaiment">ENTERTAINMENT</li></a
-                >
-                <a href="./technology.html"
-                  ><li class="mob_tech">TECHNOLOGY</li></a
-                >
-                <a href="#"><li class="mob_health">HEALTH</li></a>
-                <a href="#"><li class="mob_politics">POLITICS</li></a>
-                <a href="#"><li class="mob_edu">EDUCATION</li></a>
-                <a href="#"><li class="mob_food">FOOD</li></a>
-                <a href="#"><li class="mob_art">ART</li></a>
-              </ul>
-              <hr />
-            </div>
-
-            <div class="mobile_menu_links">
-              <p>MORE</p>
-              <div class="mobile_menu_links_top">
-                <a href="{% url 'post:our-team' %}">TEAM</a>
-                <a href="{% url 'post:archive' %}">ARCHIVE</a>
-              </div>
-              <div class="mobile_menu_links_bottom">
-                <a href="./write-for-us.html">WRITE FOR US</a>
-                <a href="./contact-us.html">CONTACT</a>
-              </div>
-            </div>
-
-            <div class="mobile_menu_btns_wrap">
-              <div class="mobile_menu_btns">
-                <button class="button" onclick="showLoginModal()">
-                  Sign In
-                </button>
-                <button
-                  class="subscribe button"
-                  onclick="window.location.href='#subscribe';"
-                >
-                  Subscribe
-                </button>
-              </div>
-
-              <img
-                src="{% static './img/home_page/author_hamzy.png'%}"
-                alt="profile picture"
-              />
-            </div>
-          </div>
-
-          <a href="{% url 'post:index' %}"
-            ><img
-              src="{% static './img/logo_resources/Favicon.png'%}"
-              alt="Blogga Logo Icon"
-          /></a>
-
-          <nav>
-            <a href="{% url 'post:index' %}"
-              ><img
-                src="{% static './img/logo_resources/Favicon_White.png'%}"
-                alt="Blogga Logo"
-            /></a>
-            <ul>
-              <li><a href="./fashion.html" class="nav_fashion">FASHION</a></li>
-              <li>
-                <a href="{% url 'post:index' %}" class="nav_entertainment"
-                  >ENTERTAINMENT</a
-                >
-              </li>
-              <li>
-                <a href="./technology.html" class="nav_tech">TECHNOLOGY</a>
-              </li>
-              <li><a href="#" class="nav_health">HEALTH</a></li>
-              <li><a href="#" class="nav_politics">POLITICS</a></li>
-              <li><a href="#" class="nav_edu">EDUCATION</a></li>
-              <li><a href="#" class="nav_food">FOOD</a></li>
-              <li><a href="#" class="nav_art">ART</a></li>
-              <li>
-                <input type="checkbox" name="more_check" id="more_check" />
-
-                <label for="more_check" class="more">
-                  MORE
-                  <span class="dropdown_arrow"
-                    ><img
-                      src="{% static './img/home_page/dropdown_arrow.png'%}"
-                      alt="dropdown"
-                  /></span>
-                </label>
-
-                <div class="more_dropdown">
-                  <ul>
-                    <li><a href="{% url 'post:our-team' %}">TEAM</a></li>
-                    <li><a href="./write-for-us.html">WRITE FOR US</a></li>
-                    <li><a href="{% url 'post:archive' %}">ARCHIVE</a></li>
-                    <li><a href="./contact-us.html">CONTACT</a></li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </nav>
-
-          <i class="fa-solid fa-magnifying-glass mobile_search"></i>
-
-          <div class="nav_btns">
-            <!-- onclick="showLoginModal() -->
-            <button class="button">
-              <a href="{% url 'login' %}">Sign In</a>
-            </button>
-            <button
-              class="subscribe button"
-              onclick="window.location.href='#subscribe';"
-            >
-              Subscribe
-            </button>
-
-            <img
-              src="{% static './img/home_page/author_hamzy.png'%}"
-              alt="profile picture"
-            />
-          </div>
-        </div>
-      </div>
-    </header>
-=======
-       <!-- SCROLL TO TOP BUTTON -->
-       <a href="#top" class="to_top"
-       ><i class="fa-solid fa-arrow-up"></i
-     ></a>
-     <!-- SCROLL TO TOP BUTTON -->
- 
-{% include "post/header.html" %}
->>>>>>> 5d42311d8da3b36148fed8cfc2b0ba77055e2d61
+    {% include "post/header.html" %}
     <!--  -->
     <!-- HEADER & MOBILE MENU END-->
 
@@ -369,56 +71,13 @@
       <!-- HERO SECTION START -->
       <!--  -->
 
-      {% for post in posts %}
-
       <section class="hero" id="to_top">
-<<<<<<< HEAD
-        {% if forloop.first %}
+        {% for post in posts %} {% if forloop.counter == 1 %}
 
         <div class="hero_left">
           <div class="hero_left_img">
             <a href="{% url 'post:post_detail' post.slug %}">
-              <img
-                src="{{ post.image.url }}"
-                alt="Constance wu"
-                class="img_zoom"
-              />
-            </a>
-            <p>TOP STORY</p>
-          </div>
-
-          <!-- <a href="{% url 'post:post_detail' post.slug %}">
-            <img
-              src="{{ post.image.url }}"
-              alt="Lights"
-              style="height: 20%; width: 20%"
-            />
-          </a> -->
-
-          <!-- title: {{post.title}} <br>, 
-        category: {{post.category}},<br> 
-        author: {{post.author.get_full_name}} <br>
-        {{post.description}} -->
-
-          <a href="{% url 'post:post_detail' post.slug %}" class="post_title"
-            ><h2>{{post.title}}</h2></a
-          >
-
-          <p>{{post.contents | truncatechars:200}}</p>
-=======
-        {% for post in posts %}
-        
-        {% if  forloop.counter == 1 %}
-          
-        
-          
-        <div class="hero_left">
-          <div class="hero_left_img">
-              <a href="{% url 'post:post_detail' post.slug %}">
-            <img
-              src="{{post.image.url}}"
-              alt="Constance wu"
-              class="img_zoom"
+              <img src="{{post.image.url}}" alt="Constance wu" class="img_zoom"
             /></a>
             <p>TOP STORY</p>
           </div>
@@ -431,13 +90,9 @@
             </h2></a
           >
 
-          <p>
-            {{post.description}}
-          </p>
->>>>>>> 5d42311d8da3b36148fed8cfc2b0ba77055e2d61
+          <p>{{post.description}}</p>
 
           <div class="hero_author_wrapper">
-              
             <div class="hero_author_details">
               <img
                 src="{% static './img/home_page/author_hamzy.png'%}"
@@ -458,39 +113,25 @@
             </div>
           </div>
         </div>
-<<<<<<< HEAD
 
-        {% else %}
-
-=======
-        
->>>>>>> 5d42311d8da3b36148fed8cfc2b0ba77055e2d61
         <div class="hero_right">
-            {% elif forloop.counter == 2 %}
+          {% elif forloop.counter == 2 %}
           <div class="hero_right_card">
-<<<<<<< HEAD
             <a href="{% url 'post:post_detail' post.slug %}">
-              <img src="{{ post.image.url }}" alt="Song Art" class="img_zoom"
-=======
-              <a href="{% url 'post:post_detail' post.slug %}">
-            <img
-              src="{{post.image.url}}"
-              alt="Song Art"
-              class="img_zoom"
->>>>>>> 5d42311d8da3b36148fed8cfc2b0ba77055e2d61
+              <img src="{{post.image.url}}" alt="Song Art" class="img_zoom"
             /></a>
 
             <div class="card_info_wrapper">
               <div class="card_info">
-                  <a href="{{post.category.get_absolute_url}}">  <p class="category_label entertainment">{{post.category}}</p></a>
+                <a href="{{post.category.get_absolute_url}}">
+                  <p class="category_label entertainment">
+                    {{post.category}}
+                  </p></a
+                >
 
-<<<<<<< HEAD
                 <a
                   href="{% url 'post:post_detail' post.slug %}"
                   class="post_title"
-=======
-                <a href="{% url 'post:post_detail' post.slug %}" class="post_title"
->>>>>>> 5d42311d8da3b36148fed8cfc2b0ba77055e2d61
                   ><h3>{{post.title}}</h3></a
                 >
 
@@ -501,27 +142,21 @@
               </div>
             </div>
           </div>
-<<<<<<< HEAD
-
-          <!-- <div class="hero_right_card">
-=======
           {% elif forloop.counter == 3 %}
           <div class="hero_right_card">
-              <a href="{% url 'post:post_detail' post.slug %}">
->>>>>>> 5d42311d8da3b36148fed8cfc2b0ba77055e2d61
-            <img
-              src="{{post.image.url}}"
-              alt="Picture of eggs"
-              class="img_zoom"
+            <a href="{% url 'post:post_detail' post.slug %}">
+              <img
+                src="{{post.image.url}}"
+                alt="Picture of eggs"
+                class="img_zoom"
             /></a>
             <div class="card_info_wrapper">
               <div class="card_info">
-                  
-                  <a href="{{post.category.get_absolute_url}}"> <p class="category_label technology">{{post.category}}</p></a>
-
-                <a href="#" class="post_title"
-                  ><h3>{{post.title}}</h3></a
+                <a href="{{post.category.get_absolute_url}}">
+                  <p class="category_label technology">{{post.category}}</p></a
                 >
+
+                <a href="#" class="post_title"><h3>{{post.title}}</h3></a>
 
                 <div class="card_info_bottom">
                   <p>By {{post.title}}</p>
@@ -532,17 +167,21 @@
           </div>
           {% elif forloop.counter == 4 %}
           <div class="hero_right_card">
-              <a href="{% url 'post:post_detail' post.slug %}">
-            <img
-              src="{{post.image.url}}"
-              alt="Vaccine Image"
-              class="img_zoom"
+            <a href="{% url 'post:post_detail' post.slug %}">
+              <img
+                src="{{post.image.url}}"
+                alt="Vaccine Image"
+                class="img_zoom"
             /></a>
             <div class="card_info_wrapper">
               <div class="card_info">
-                  <a href="{{post.category.get_absolute_url}}"> <p class="category_label health">{{post.category}}</p></a>
+                <a href="{{post.category.get_absolute_url}}">
+                  <p class="category_label health">{{post.category}}</p></a
+                >
 
-                <a href="{% url 'post:post_detail' post.slug %}" class="post_title"
+                <a
+                  href="{% url 'post:post_detail' post.slug %}"
+                  class="post_title"
                   ><h3>{{post.title}}</h3></a
                 >
 
@@ -555,13 +194,18 @@
           </div>
           {% elif forloop.counter == 5%}
           <div class="hero_right_card">
-         <a href="{% url 'post:post_detail' post.slug %}">
-                <img src="{{ post.image.url }}" alt="Lights" class="img_zoom"></a>
+            <a href="{% url 'post:post_detail' post.slug %}">
+              <img src="{{ post.image.url }}" alt="Lights" class="img_zoom"
+            /></a>
             <div class="card_info_wrapper">
               <div class="card_info">
-               <a href="{{post.category.get_absolute_url}}"> <p class="category_label art">{{post.category}}</p></a>
+                <a href="{{post.category.get_absolute_url}}">
+                  <p class="category_label art">{{post.category}}</p></a
+                >
 
-                <a href= "{% url 'post:post_detail' post.slug %}" class="post_title"
+                <a
+                  href="{% url 'post:post_detail' post.slug %}"
+                  class="post_title"
                   ><h3>{{post.title}}</h3></a
                 >
 
@@ -571,16 +215,12 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
+          -->
         </div>
-        {% endif %}
-        {% endfor %}
+        {% endif %} {% endfor %}
       </section>
 
-<<<<<<< HEAD
-      {% endif %} {% endfor %}
-=======
->>>>>>> 5d42311d8da3b36148fed8cfc2b0ba77055e2d61
       <!--  -->
       <!-- HERO SECTION END-->
 
@@ -1079,7 +719,7 @@
           <li><a href="./write-for-us.html">WRITE FOR US</a></li>
           <li><a href="./ourteam.html">TEAM</a></li>
           <li>
-            <a href="./index.html"
+            <a href="{% url 'post:index' %}"
               ><img
                 src="{% static './img/logo_resources/Favicon_White.png'%}"
                 alt="Blogga Icon"

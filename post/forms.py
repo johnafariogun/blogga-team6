@@ -17,17 +17,17 @@ class PostForm(forms.ModelForm):
         fields = ['title', 'status', 'description','category','image','tags','contents']
         widgets = {
         "title": forms.Textarea(
-        attrs={'style':'resize:none;','class': 'meta','placeholder':'Enter your title here'}
+        attrs={'style':'resize:none; padding:0.7rem;','class': 'meta','placeholder':'Enter your title here'}
         ),
     
         'tags': forms.Textarea(
-            attrs={ 'style':'resize:none;','class': 'meta','placeholder':'Enter your tags here'}
+            attrs={ 'style':'resize:none; padding:0.7rem;','class': 'meta','placeholder':'Enter your tags here'}
         ),
         # # category= forms.ModelChoiceField(queryset=Category.objects.all() )
         # # # status = forms.CharField(widget=forms.Select(choices=Post.choices))
 
         "description": forms.Textarea(
-            attrs={'style':'resize:none;','class': 'meta','placeholder':'Enter your post description here'}
+            attrs={'style':'resize:none; padding:0.7rem;','class': 'meta','placeholder':'Enter your post description here'}
         ),
 # <input type="file" name="image" accept="image/*" id="id_image">
         # "image": forms.ImageField(

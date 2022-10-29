@@ -32,7 +32,7 @@ DEBUG = True
 # DEBUG = False
 
 ALLOWED_HOSTS = ['web-production-c906.up.railway.app','127.0.0.1']
-CSRF_TRUSTED_ORIGINS= ['https://web-production-c906.up.railway.app']
+CSRF_TRUSTED_ORIGINS= ['https://web-production-c906.up.railway.app', 'http://127.0.0.1']
 # CORS_ALLOWED_ORIGINS =  ['web-production-c906.up.railway.app',"http://localhost:8080",
 #     "http://127.0.0.1:9000",]
 # Application definition
