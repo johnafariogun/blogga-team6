@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.models import User
-from .forms import CreateUserForm
+from .forms import CreateUserForm, ContactForm
 from django.contrib import messages
 from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth.tokens import default_token_generator
@@ -118,10 +118,31 @@ def _log_in(request):
 
     return render(request, 'accounts/login_john.html', context)
 
-# @login_required(login_url='login/')
+def  _log_modal(request):
+    if request.user.is_authenticated:
+        return redirect('post:index')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+            user = authenticate(request, username=username, password=password)
+            
+            if user is not None:
+                login(request, user)
+                return redirect('post:index')
+            else:
+                messages.info(request, "Username or Password is incorrect")
+    
+    context ={}
+
+    return render(request, 'post/login_modal.html', context)
+
+
+@login_required()
 def _log_out(request):
     logout(request)
-    return redirect('login')
+    return redirect('post:index')
 
 
 def password_reset_request(request):
@@ -154,4 +175,30 @@ def password_reset_request(request):
   
 	return render(request=request, template_name="accounts/password_reset.html", context={"password_reset_form":password_reset_form},)
 
+def contact_view(request):
+    form = ContactForm
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject="website inquiry"
+            body={
+                'first_name': form.cleaned_data['first_name'],
+                'last_name': form.cleaned_data['last_name'],
+                'email': form.cleaned_data['email'],
+                'message': form.cleaned_data['message_'],
+            }
+            message = '\n'.join(body.values())
+            try:
+                send_mail(subject, message,'first_name', ['afariogun.john2002@gmail.com'] , fail_silently=False)
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+                
+            
+            return redirect('login')
+        
+            
+    else:
+        form = ContactForm
+    context = {'form': form}
+    return render(request, 'accounts/contact-us.html', context)
 

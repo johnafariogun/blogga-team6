@@ -13,6 +13,26 @@ from django.urls import reverse
 
 
 User = get_user_model()
+
+class Profile(models.Model):
+
+    # class PostObjects(models.Manager):
+    #     def get_queryset(self):
+    #         queryset = super(Post, self).get_queryset().filter(self.blogger = self.posts.author)
+            
+    #         return queryset
+    blogger = models.OneToOneField(User, on_delete = models.CASCADE, default = 1)
+    # posts = models.ForeignKey(Post, on_delete=models.CASCADE)
+    # bio = models.TextField(max_length = 250)
+    avatar = models.ImageField(default = '/images/profile_pics/pngfind.com-placeholder-png-6104451.png',blank = True, null = True, upload_to='images/profile_pics')
+
+@ receiver(post_save, sender = User)
+def create_user_profile(sender, instance, created,**kwargs):
+    if created:
+        Profile.objects.create(blogger=instance)
+
+
+
 class Category(models.Model):
     name = models.CharField(max_length = 100, unique=True, null=True)
     category_slug = models.SlugField(max_length = 100, unique= True, blank =True, null = True)
@@ -33,8 +53,9 @@ class Category(models.Model):
     def get_cat():
         results, _ = Category.objects.get_or_create(name='Generic')
         return results.pk
-
-
+    
+    def get_absolute_url(self):
+        return f"/category/{self.category_slug}"
 class SubCategory(models.Model):
     name = models.CharField(max_length = 100, unique=True, null=True)
     category = models.ForeignKey(Category, on_delete = models.CASCADE, blank =True, null = True)
@@ -94,24 +115,6 @@ class Post(models.Model):
         return reverse('post:post_detail', kwargs={'slug': self.slug})
 
 
-
-
-class Profile(models.Model):
-
-    # class PostObjects(models.Manager):
-    #     def get_queryset(self):
-    #         queryset = super(Post, self).get_queryset().filter(self.blogger = self.posts.author)
-            
-    #         return queryset
-    blogger = models.OneToOneField(User, on_delete = models.CASCADE, default = 1)
-    # posts = models.ForeignKey(Post, on_delete=models.CASCADE)
-    # bio = models.TextField(max_length = 250)
-    avatar = models.ImageField(default = '/images/profile_pics/pngfind.com-placeholder-png-6104451.png',blank = True, null = True, upload_to='images/profile_pics')
-
-@ receiver(post_save, sender = User)
-def create_user_profile(sender, instance, created,**kwargs):
-    if created:
-        Profile.objects.create(blogger=instance)
 
 
 
